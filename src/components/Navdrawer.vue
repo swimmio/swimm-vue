@@ -10,7 +10,7 @@
     <v-divider></v-divider>
 
     <v-list dense nav>
-      <v-list-item v-for="item in menuItems" :key="item.title" link>
+      <v-list-item link v-for="item in menuItems" :key="item.title" :to="item.route">
         <v-list-item-icon>
           <v-icon>{{ item.icon }}</v-icon>
         </v-list-item-icon>
@@ -26,32 +26,15 @@
 <script>
 export default {
   name: "Navdrawer",
+  props: {
+    menuItems: Array
+  },
   data() {
     return {
-      menuItems: [],
       right: null,
     };
   },
-  mounted() {
-    this.menuItems.push({ title: "Home", icon: "mdi-home" });
 
-    if (localStorage.getItem("items")) {
-      try {
-        const items = JSON.parse(localStorage.getItem("items"));
-        this.menuItems.push(
-          ...items.map((rootItems) => {
-            return {
-              title: rootItems.name,
-              icon: "mdi-format-list-bulleted",
-            };
-          })
-        );
-      } catch (e) {
-        localStorage.removeItem("items");
-      }
-    }
-    this.menuItems.push({ title: "About", icon: "mdi-help-box" });
-  },
 };
 </script>
 

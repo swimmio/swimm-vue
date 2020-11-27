@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container class="text-center">
-      <v-toolbar-title>title</v-toolbar-title>
+      <v-toolbar-title>Home</v-toolbar-title>
       <v-btn icon @click="addEntrie"><v-icon>mdi-plus</v-icon></v-btn>
     </v-container>
     <v-treeview open-on-click :items="items">
@@ -9,9 +9,9 @@
         <v-text-field
           class="text-field"
           v-model="item.name"
-          @input="updateStorageOnInput"
+          @input="updateInput"
           :append-icon="`mdi-trash-can-outline`"
-          @click:append="removeItem(item)"
+          @click:append="deleteItem(item.id)"
         >
         </v-text-field>
       </template>
@@ -34,56 +34,18 @@
 <script>
 export default {
   name: "TreeView",
-  data: () => ({
-    nextId: 5,
-    items: [
-      {
-        id: 1,
-        name: "Welcome!! start add items :",
-        children: [
-          { id: 2, name: "You can nest as deep as you need" },
-          { id: 3, name: "Chrome : app" },
-          { id: 4, name: "Webstorm : app" },
-        ],
-      },
-    ],
-  }),
-  computed: {
-    findItem(id, items = null) {
-      if (!items) {
-        items = this.items;
-      }
-
-      return items.reduce((acc, item) => {
-        if (acc) {
-          return acc;
-        }
-
-        if (item.id === id) {
-          return item;
-        }
-
-        if (item.children) {
-          return this.findItem(id, item.children);
-        }
-
-        return acc;
-      }, null);
-    },
+  props: {
+    items: Array,
+  },
+  data() {
+    return { nextId: 0 };
   },
   mounted() {
-    if (localStorage.getItem("items")) {
+    if (localStorage.getItem("nextId")) {
       try {
-        this.items = JSON.parse(localStorage.getItem("items"));
+        this.nextId = Number(localStorage.getItem("nextId"));
       } catch (e) {
-        localStorage.removeItem("items");
-      }
-      if (localStorage.getItem("nextId")) {
-        try {
-          this.nextId = Number(localStorage.getItem("nextId"));
-        } catch (e) {
-          localStorage.removeItem("nextId");
-        }
+        localStorage.removeItem("nextId");
       }
     }
   },
@@ -98,37 +60,13 @@ export default {
           if (child.id == id) {
             items.splice(index, 1);
             found = true;
+            this.updateItems();
           }
           if (child.children) {
             this.deleteItem(id, child.children);
           }
         });
       }
-    },
-    saveToLocalStorage() {
-      console.log("save to local storage");
-      localStorage.setItem("nextId", this.nextId);
-      const parsed = JSON.stringify(this.items);
-      localStorage.setItem("items", parsed);
-    },
-    updateStorageOnInput() {
-      // triggered on input, should only update the local storage only when user finished typing (debouncing)
-      if (this.timeout) clearTimeout(this.timeout);
-      this.timeout = setTimeout(() => {
-        this.saveToLocalStorage();
-      }, 1000);
-    },
-    addEntrie() {
-      this.items.push({
-        id: this.nextId,
-        name: "",
-      });
-      this.nextId += 1;
-    },
-    removeItem(item) {
-      console.log("remove");
-      this.deleteItem(item.id);
-      this.saveToLocalStorage();
     },
     addChild(item) {
       if (!item.children) {
@@ -137,12 +75,34 @@ export default {
 
       const name = "";
       const id = this.nextId;
+      localStorage.setItem("nextId", this.nextId);
+
       item.children.push({
         id,
         name,
       });
-      this.nextId += 1;
-      this.saveToLocalStorage();
+      this.updateItems();
+    },
+    updateItems() {
+      console.log("fire event");
+      this.$emit("updateItems", this.items);
+    },
+    updateInput() {
+      // triggered on input, should only update the local storage only when user finished typing (debouncing)
+      if (this.timeout) clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => {
+        console.log("update debounce", this.items, this.itemId);
+        this.updateItems();
+      }, 1000);
+    },
+    addEntrie() {
+      this.items.push({
+        id: this.nextId,
+        name: "",
+      });
+      this.nextId+=1;
+      localStorage.setItem("nextId", this.nextId);
+      this.updateItems();
     },
   },
 };
@@ -150,6 +110,6 @@ export default {
 
 <style scoped>
 .v-text-field .v-input__append-inner .v-input__icon {
-  visibility: hidden ;
+  visibility: hidden;
 }
 </style>
