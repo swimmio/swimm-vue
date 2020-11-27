@@ -3,49 +3,52 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const findItem = (items, id) => {
-  return items.reduce((acc, item) => {
-    if (acc) {
-      return acc;
-    }
-
-    if (item.id === id) {
-      return item;
-    }
-
-    if (item.children) {
-      return findItem(item.children, id);
-    }
-
-    return acc;
-  }, null);
-}
-
 export default new Vuex.Store({
   state: {
-    nextId: 26,
-    selectedItem: {},
+    nextId: 0,
+    items: [],
 
   },
   mutations: {
-    SAVE_STATE(state, newStateItems) {
-      state.items = [...newStateItems];
+    UPDATE_ITEMS(state, items) {
+      state.items = [...items]
     },
-    INC_ID(state) {
-      state.nextId += 1;
+    UPDATE_NEXTID(state, nextId) {
+      state.nextId = nextId;
     },
   },
   actions: {
-    saveState({ commit }, updateItems) {
-      commit('SAVE_STATE', updateItems);
+    updateStore({ commit }) {
+      if (localStorage.getItem("items")) {
+        try {
+          const items = JSON.parse(localStorage.getItem("items"));
+          commit('UPDATE_ITEMS', items);
+
+        } catch (e) {
+          localStorage.removeItem("items");
+        }
+      }
+
+      if (localStorage.getItem("nextID")) {
+        try {
+          const nextID = JSON.parse(localStorage.getItem("nextID"));
+          commit('UPDATE_NEXTID', nextID);
+
+        } catch (e) {
+          localStorage.removeItem("nextID");
+        }
+      }
     },
-    incId({ commit }) {
-      commit('INC_ID');
-    }
+    saveToLocalStorage(items, nextId) {
+      console.log("save to local storage");
+      const parsed = JSON.stringify(items);
+      localStorage.setItem("items", parsed);
+      localStorage.setItem("nextID", nextId);
+      this.updateStore();
+    },
   },
   getters: {
     getItemsRoot: (state) => (state.items),
-    getItemByID: (state, id) => (findItem(state.items, id)),
     getNextId: (state) => state.nextId,
   }
 })

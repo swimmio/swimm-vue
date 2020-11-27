@@ -1,17 +1,18 @@
 <template>
   <v-container class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+        <tree-view :items="items" @updateItems="updateItems" />
   </v-container>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import TreeView from "@/components/TreeView.vue";
+
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
-  }
+    TreeView,
+  },
 }
 </script>

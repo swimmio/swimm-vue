@@ -24,10 +24,10 @@
 import Breadcrumbs from "./components/Breadcrumbs.vue";
 import Navdrawer from "./components/Navdrawer.vue";
 import TreeView from "./components/TreeView.vue";
+import { mapActions, mapState } from "vuex";
 
 export default {
   name: "App",
-
   components: {
     Navdrawer,
     Breadcrumbs,
@@ -36,39 +36,16 @@ export default {
 
   data: () => ({
     menuItems: [],
-    nextId: 9,
-    items: [
-      {
-        id: 1,
-        name: "firstChild",
-        children: [
-          { id: 2, name: "1 AAA" },
-          { id: 3, name: "1 BBB " },
-          { id: 4, name: "1 CCC" },
-        ],
-      },
-      {
-        id: 5,
-        name: "secondChild",
-        children: [
-          { id: 6, name: "2 AAA" },
-          { id: 7, name: "2 BBB" },
-          { id: 8, name: "2 CCC" },
-        ],
-      },
-    ],
   }),
+  computed: {
+    ...mapState(['items', 'nextId']),
+  },
   mounted() {
-    if (localStorage.getItem("items")) {
-      try {
-        this.items = JSON.parse(localStorage.getItem("items"));
-      } catch (e) {
-        localStorage.removeItem("items");
-      }
-    }
+    this.updateStore();
     this.setMenuItems();
   },
   methods: {
+    ...mapActions(['saveToLocalStorage','updateStore']),
     findItem(id, items = null) {
       if (!items) {
         items = this.items;
@@ -92,14 +69,8 @@ export default {
     },
     updateItems(itemsToUpdate) {
       this.items = itemsToUpdate;
-      this.saveToLocalStorage();
+      this.saveToLocalStorage(this.items, this.nextId);
       this.setMenuItems();
-    },
-
-    saveToLocalStorage() {
-      console.log("save to local storage");
-      const parsed = JSON.stringify(this.items);
-      localStorage.setItem("items", parsed);
     },
     setMenuItems() {
       this.menuItems = [];
@@ -109,11 +80,15 @@ export default {
           return {
             title: rootItem.name,
             icon: "mdi-format-list-bulleted",
-            route: `/${rootItem.id}`
+            route: `/${rootItem.id}`,
           };
         })
       );
-      this.menuItems.push({ title: "About", icon: "mdi-help-box", route: "/about" });
+      this.menuItems.push({
+        title: "About",
+        icon: "mdi-help-box",
+        route: "/about",
+      });
     },
   },
 };
