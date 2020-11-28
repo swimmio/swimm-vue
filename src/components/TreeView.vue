@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container class="text-center">
-      <v-toolbar-title>{{ title }}</v-toolbar-title>
+      <v-toolbar-title class="custom-class">{{ title }}</v-toolbar-title>
       <v-btn v-if="!readOnly" icon @click="addEntrie"
         ><v-icon>mdi-plus</v-icon></v-btn
       >
@@ -104,7 +104,7 @@ export default {
 </script>
 
 <style scoped>
-.v-text-field .v-input__append-inner .v-input__icon {
-  visibility: hidden;
+.custom-class {
+  color: deepskyblue;
 }
 </style>

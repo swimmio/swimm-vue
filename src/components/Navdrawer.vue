@@ -2,7 +2,7 @@
   <v-navigation-drawer permanent app>
     <v-list-item>
       <v-list-item-content>
-        <v-list-item-title class="title">Lists Pool</v-list-item-title>
+        <v-list-item-title class="title custom-class">{{title}}</v-list-item-title>
         <v-list-item-subtitle> Learn how to swimm in Vue.js </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
@@ -31,10 +31,15 @@ export default {
   },
   data() {
     return {
-      right: null,
+      title: "Lists Pool",
     };
   },
 
 };
 </script>
 
+<style scoped>
+.custom-class {
+  color: deepskyblue;
+}
+</style>

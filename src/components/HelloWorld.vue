@@ -11,7 +11,7 @@
       </v-col>
 
       <v-col class="mb-4">
-        <p class="subheading font-weight-regular">
+        <p class="subheading font-weight-regular custom-class">
           This project been created in the purpose of knowlage transffer via
           swimm platform
         </p>
@@ -62,3 +62,9 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+.custom-class {
+  color: deepskyblue;
+}
+</style>
