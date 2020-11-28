@@ -2,8 +2,8 @@
   <v-navigation-drawer permanent app>
     <v-list-item>
       <v-list-item-content>
-        <v-list-item-title class="title"> Seavue lists </v-list-item-title>
-        <v-list-item-subtitle> learn how to swimm in vue </v-list-item-subtitle>
+        <v-list-item-title class="title">Lists Pool</v-list-item-title>
+        <v-list-item-subtitle> Learn how to swimm in Vue.js </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
 

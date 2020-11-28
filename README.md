@@ -1,24 +1,9 @@
 # swimm-vue
 
-## Project setup
-```
-yarn install
-```
+Welcome to swimm-vue repository!
+This project has been created in order to transfer knowlage about the usage of Vue.js.  
+All of the learning is taken via Swimm.io platform.  
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+In order to make the best of this program you should know some knowlage javascript and web/front-end development.
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Clone this repository to your workstation and use the `swimm start` cli command in the project folder (or open the repository through swimm ui).
