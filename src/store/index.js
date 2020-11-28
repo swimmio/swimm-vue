@@ -11,7 +11,9 @@ export default new Vuex.Store({
   },
   mutations: {
     UPDATE_ITEMS(state, items) {
-      state.items = [...items]
+      console.log('update state', items)
+      state.items = [];
+      state.items.push(...items);
     },
     UPDATE_NEXTID(state, nextId) {
       state.nextId = nextId;
@@ -21,10 +23,12 @@ export default new Vuex.Store({
     updateStore({ commit }) {
       if (localStorage.getItem("items")) {
         try {
-          const items = JSON.parse(localStorage.getItem("items"));
-          commit('UPDATE_ITEMS', items);
+          const itemsFromStorage = JSON.parse(localStorage.getItem("items"));
+          console.log('calling the mutation', itemsFromStorage)
+          commit('UPDATE_ITEMS', itemsFromStorage);
 
         } catch (e) {
+          console.log('calling remove', e)
           localStorage.removeItem("items");
         }
       }
@@ -39,12 +43,46 @@ export default new Vuex.Store({
         }
       }
     },
-    saveToLocalStorage(items, nextId) {
-      console.log("save to local storage");
+    updateItems({ commit }) {
+      if (localStorage.getItem("items")) {
+        try {
+          const items = JSON.parse(localStorage.getItem("items"));
+          commit('UPDATE_ITEMS', items);
+
+        } catch (e) {
+          localStorage.removeItem("items");
+        }
+      }
+    },
+    updateNextID({ commit }) {
+      if (localStorage.getItem("nextID")) {
+        try {
+          const nextID = JSON.parse(localStorage.getItem("nextID"));
+          commit('UPDATE_NEXTID', nextID);
+
+        } catch (e) {
+          localStorage.removeItem("nextID");
+        }
+      }
+    },
+    saveItemsToLocalStorage({ commit }, items) {
+      console.log("save to local storage", items);
       const parsed = JSON.stringify(items);
+      console.log(parsed);
+      localStorage.setItem("items", parsed);
+      commit('UPDATE_ITEMS', items);
+    },
+    saveNextIdToLocalStorage({ commit }, nextId) {
+      commit('UPDATE_NEXTID', nextId);
+    },
+    saveToLocalStorage({ commit }, items, nextId) {
+      console.log("save to local storage", items);
+      const parsed = JSON.stringify(items);
+      console.log(parsed);
       localStorage.setItem("items", parsed);
       localStorage.setItem("nextID", nextId);
-      this.updateStore();
+      commit('UPDATE_ITEMS', items);
+      commit('UPDATE_NEXTID', nextId);
     },
   },
   getters: {

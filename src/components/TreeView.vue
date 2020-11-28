@@ -32,26 +32,18 @@
 </template>
 
 <script>
-//import { mapActions, mapState } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
   name: "TreeView",
   props: {
     items: Array,
   },
-  data() {
-    return { nextId: 0 };
-  },
-  mounted() {
-    if (localStorage.getItem("nextId")) {
-      try {
-        this.nextId = Number(localStorage.getItem("nextId"));
-      } catch (e) {
-        localStorage.removeItem("nextId");
-      }
-    }
+  computed: {
+    ...mapState(['nextId'])
   },
   methods: {
+    ...mapActions(['saveNextIdToLocalStorage']),
     deleteItem(id, items = null, found = false) {
       if (!found) {
         if (!items) {
@@ -77,16 +69,16 @@ export default {
 
       const name = "";
       const id = this.nextId;
-      localStorage.setItem("nextId", this.nextId);
 
       item.children.push({
         id,
         name,
       });
+      this.saveNextIdToLocalStorage(id+1);
       this.updateItems();
     },
     updateItems() {
-      console.log("fire event");
+      console.log("fire event", this.items);
       this.$emit("updateItems", this.items);
     },
     updateInput() {
@@ -102,8 +94,7 @@ export default {
         id: this.nextId,
         name: "",
       });
-      this.nextId+=1;
-      localStorage.setItem("nextId", this.nextId);
+      this.saveNextIdToLocalStorage(this.nextId+1);
       this.updateItems();
     },
   },

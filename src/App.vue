@@ -45,7 +45,7 @@ export default {
     this.setMenuItems();
   },
   methods: {
-    ...mapActions(['saveToLocalStorage','updateStore']),
+    ...mapActions(['saveItemsToLocalStorage','updateStore']),
     findItem(id, items = null) {
       if (!items) {
         items = this.items;
@@ -67,9 +67,9 @@ export default {
         return acc;
       }, null);
     },
-    updateItems(itemsToUpdate) {
-      this.items = itemsToUpdate;
-      this.saveToLocalStorage(this.items, this.nextId);
+    updateItems(updateItems) {
+      this.saveItemsToLocalStorage(updateItems);
+      this.updateStore();
       this.setMenuItems();
     },
     setMenuItems() {
