@@ -1,6 +1,6 @@
 <template>
   <v-container class="home">
-    <tree-view :items="items" @updateItems="updateItems" />
+    <tree-view :readOnly="!isHomePage" :items="itemToDisplay" :title="title" @updateItems="updateItems" />
   </v-container>
 </template>
 
@@ -11,6 +11,11 @@ import { mapActions, mapState } from "vuex";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      title: 'Home'
+    }
+  },
   components: {
     TreeView,
   },
@@ -19,6 +24,20 @@ export default {
   },
   computed: {
     ...mapState(["items", "nextId"]),
+    itemToDisplay() {
+      if (!this.itemId) {
+        return this.items;
+      }
+      const item = this.findItem(this.itemId);
+      this.setTitle(item.name);
+      return item.children;
+    },
+    isHomePage(){
+      if (this.itemId) {
+        return false; 
+      }
+      return true;
+    }
   },
   created() {
     this.updateStore();
@@ -45,6 +64,9 @@ export default {
 
         return acc;
       }, null);
+    },
+    setTitle(newTitle){
+      this.title = newTitle;
     },
     updateItems(updateItems) {
       this.saveItemsToLocalStorage(updateItems);

@@ -11,7 +11,6 @@ export default new Vuex.Store({
   },
   mutations: {
     UPDATE_ITEMS(state, items) {
-      console.log('update state', items)
       state.items = [];
       state.items.push(...items);
     },
@@ -24,11 +23,9 @@ export default new Vuex.Store({
       if (localStorage.getItem("items")) {
         try {
           const itemsFromStorage = JSON.parse(localStorage.getItem("items"));
-          console.log('calling the mutation', itemsFromStorage)
           commit('UPDATE_ITEMS', itemsFromStorage);
 
         } catch (e) {
-          console.log('calling remove', e)
           localStorage.removeItem("items");
         }
       }
@@ -66,9 +63,7 @@ export default new Vuex.Store({
       }
     },
     saveItemsToLocalStorage({ commit }, items) {
-      console.log("save to local storage", items);
       const parsed = JSON.stringify(items);
-      console.log(parsed);
       localStorage.setItem("items", parsed);
       commit('UPDATE_ITEMS', items);
     },
@@ -77,9 +72,7 @@ export default new Vuex.Store({
       commit('UPDATE_NEXTID', nextId);
     },
     saveToLocalStorage({ commit }, items, nextId) {
-      console.log("save to local storage", items);
       const parsed = JSON.stringify(items);
-      console.log(parsed);
       localStorage.setItem("items", parsed);
       localStorage.setItem("nextID", nextId);
       commit('UPDATE_ITEMS', items);

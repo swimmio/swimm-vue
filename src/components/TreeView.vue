@@ -1,12 +1,15 @@
 <template>
   <div>
     <v-container class="text-center">
-      <v-toolbar-title>Home</v-toolbar-title>
-      <v-btn icon @click="addEntrie"><v-icon>mdi-plus</v-icon></v-btn>
+      <v-toolbar-title>{{ title }}</v-toolbar-title>
+      <v-btn v-if="!readOnly" icon @click="addEntrie"
+        ><v-icon>mdi-plus</v-icon></v-btn
+      >
     </v-container>
     <v-treeview open-on-click :items="items">
       <template slot="label" slot-scope="{ item }">
         <v-text-field
+          v-if="!readOnly"
           class="text-field"
           v-model="item.name"
           @input="updateInput"
@@ -14,16 +17,15 @@
           @click:append="deleteItem(item.id)"
         >
         </v-text-field>
+        <div v-else>{{ item.name }}</div>
       </template>
-      <template open slot="prepend" slot-scope="{ item }">
-        <v-btn icon> <v-icon dark> mdi-circle-medium </v-icon></v-btn>
+      <template v-if="!readOnly" open slot="prepend" slot-scope="{ item }">
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
             <v-btn v-bind="attrs" v-on="on" icon @click="addChild(item)">
               <v-icon dark> mdi-plus </v-icon></v-btn
             >
           </template>
-
           <span>add</span>
         </v-tooltip>
       </template>
@@ -38,12 +40,14 @@ export default {
   name: "TreeView",
   props: {
     items: Array,
+    title: String,
+    readOnly: Boolean,
   },
   computed: {
-    ...mapState(['nextId'])
+    ...mapState(["nextId"]),
   },
   methods: {
-    ...mapActions(['saveNextIdToLocalStorage']),
+    ...mapActions(["saveNextIdToLocalStorage"]),
     deleteItem(id, items = null, found = false) {
       if (!found) {
         if (!items) {
@@ -74,18 +78,16 @@ export default {
         id,
         name,
       });
-      this.saveNextIdToLocalStorage(id+1);
+      this.saveNextIdToLocalStorage(id + 1);
       this.updateItems();
     },
     updateItems() {
-      console.log("fire event", this.items);
       this.$emit("updateItems", this.items);
     },
     updateInput() {
       // triggered on input, should only update the local storage only when user finished typing (debouncing)
       if (this.timeout) clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
-        console.log("update debounce", this.items, this.itemId);
         this.updateItems();
       }, 1000);
     },
@@ -94,7 +96,7 @@ export default {
         id: this.nextId,
         name: "",
       });
-      this.saveNextIdToLocalStorage(this.nextId+1);
+      this.saveNextIdToLocalStorage(this.nextId + 1);
       this.updateItems();
     },
   },
