@@ -10,7 +10,7 @@
       <!-- Provides the application the proper gutter -->
       <v-container fluid>
         <!-- If using vue-router -->
-        <tree-view :items="items" @updateItems="updateItems" />
+       <router-view></router-view>
       </v-container>
     </v-main>
 
@@ -23,55 +23,26 @@
 <script>
 import Breadcrumbs from "./components/Breadcrumbs.vue";
 import Navdrawer from "./components/Navdrawer.vue";
-import TreeView from "./components/TreeView.vue";
-import { mapActions, mapState } from "vuex";
+//import TreeView from "./components/TreeView.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "App",
   components: {
     Navdrawer,
     Breadcrumbs,
-    TreeView,
   },
 
   data: () => ({
     menuItems: [],
   }),
   computed: {
-    ...mapState(['items', 'nextId']),
+    ...mapState(["items", "nextId"]),
   },
   mounted() {
-    this.updateStore();
     this.setMenuItems();
   },
   methods: {
-    ...mapActions(['saveItemsToLocalStorage','updateStore']),
-    findItem(id, items = null) {
-      if (!items) {
-        items = this.items;
-      }
-
-      return items.reduce((acc, item) => {
-        if (acc) {
-          return acc;
-        }
-
-        if (item.id === id) {
-          return item;
-        }
-
-        if (item.children) {
-          return this.findItem(id, item.children);
-        }
-
-        return acc;
-      }, null);
-    },
-    updateItems(updateItems) {
-      this.saveItemsToLocalStorage(updateItems);
-      this.updateStore();
-      this.setMenuItems();
-    },
     setMenuItems() {
       this.menuItems = [];
       this.menuItems.push({ title: "Home", icon: "mdi-home", route: "/" });
