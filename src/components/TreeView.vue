@@ -6,7 +6,7 @@
         ><v-icon>mdi-plus</v-icon></v-btn
       >
     </v-container>
-    <v-treeview open-on-click :items="items">
+    <v-treeview open-all :items="items">
       <template slot="label" slot-scope="{ item }">
         <v-text-field
           v-if="!readOnly"
@@ -19,14 +19,14 @@
         </v-text-field>
         <div v-else>{{ item.name }}</div>
       </template>
-      <template v-if="!readOnly" open slot="prepend" slot-scope="{ item }">
+      <template v-if="!readOnly" slot="prepend" slot-scope="{ item }">
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
             <v-btn v-bind="attrs" v-on="on" icon @click="addChild(item)">
               <v-icon dark> mdi-plus </v-icon></v-btn
             >
           </template>
-          <span>add</span>
+          <span>add child</span>
         </v-tooltip>
       </template>
     </v-treeview>

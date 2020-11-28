@@ -26,6 +26,7 @@ export default {
     ...mapState(["items", "nextId"]),
     itemToDisplay() {
       if (!this.itemId) {
+        this.setTitle("Home");
         return this.items;
       }
       const item = this.findItem(this.itemId);
