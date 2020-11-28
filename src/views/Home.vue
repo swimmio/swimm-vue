@@ -9,16 +9,18 @@
 import TreeView from "@/components/TreeView.vue";
 import { mapActions, mapState } from "vuex";
 
-
 export default {
   name: "Home",
   components: {
     TreeView,
   },
+  props: {
+    itemId: Number,
+  },
   computed: {
     ...mapState(["items", "nextId"]),
   },
-  mounted() {
+  created() {
     this.updateStore();
   },
   methods: {
@@ -47,6 +49,7 @@ export default {
     updateItems(updateItems) {
       this.saveItemsToLocalStorage(updateItems);
       this.updateStore();
+      this.$emit("updateItems");
     },
   },
 };

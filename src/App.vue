@@ -10,7 +10,7 @@
       <!-- Provides the application the proper gutter -->
       <v-container fluid>
         <!-- If using vue-router -->
-       <router-view></router-view>
+        <router-view @updateItems="updateItems"></router-view>
       </v-container>
     </v-main>
 
@@ -43,6 +43,9 @@ export default {
     this.setMenuItems();
   },
   methods: {
+    updateItems() {
+      this.setMenuItems();
+    },
     setMenuItems() {
       this.menuItems = [];
       this.menuItems.push({ title: "Home", icon: "mdi-home", route: "/" });

@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    nextId: 0,
+    nextId: 1,
     items: [],
 
   },
@@ -73,6 +73,7 @@ export default new Vuex.Store({
       commit('UPDATE_ITEMS', items);
     },
     saveNextIdToLocalStorage({ commit }, nextId) {
+      localStorage.setItem("nextID", nextId);
       commit('UPDATE_NEXTID', nextId);
     },
     saveToLocalStorage({ commit }, items, nextId) {

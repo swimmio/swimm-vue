@@ -5,17 +5,29 @@ import About from '../views/About';
 
 Vue.use(VueRouter)
 
+function dynamicPropsFn (route) {
+  return {
+    itemId:  parseInt(route.params.id)
+  }
+}
+
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
     path: '/about',
     name: 'About',
     component: About
-  }
+  },
+  {
+    path: '/:id',
+    name: 'Item',
+    component: Home,
+    props: dynamicPropsFn,
+  },
 ]
 
 const router = new VueRouter({
