@@ -1,0 +1,54 @@
+{
+    "id": "hNjJ2IRj2rdqxTuSin00",
+    "name": "Fix AboutView",
+    "dod": "In this unit you should display the hello world component and compute the timestamp to the an header.",
+    "description": "The about view has change and need a fix, some things are missing.\nThe HelloWorld component should be display and an header should tell me the time and date.\n\n![image.png](https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FDvJKcoPbOxqDEprL3Lun%2Fimg%2F4c80d623-605c-4bca-a044-f9e0bce781a1.png?alt=media&token=dfd4868c-88b1-4c02-98ea-3c241f6a2d72)",
+    "summary": "",
+    "hunksOrder": [
+        "src/views/About.vue_0"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "handson",
+    "swimmPatch": {
+        "src/views/About.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/views/About.vue b/src/views/About.vue\nindex b6bc325..df2ccf2 100644\n--- a/src/views/About.vue\n+++ b/src/views/About.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -1,23 +1,15 @@",
+                        " <template>",
+                        "   <v-container>",
+                        "     <h1>This is an about page</h1>",
+                        "-    <h2>{{ aboutPage }}</h2>",
+                        "-    <hello-world />",
+                        "   </v-container>",
+                        " </template>",
+                        " ",
+                        " <script>",
+                        "-import HelloWorld from \"@/components/HelloWorld.vue\";",
+                        "-",
+                        " export default {",
+                        "   name: \"About\",",
+                        "   components: {",
+                        "-    HelloWorld,",
+                        "   },",
+                        "   computed: {",
+                        "-    aboutPage() {",
+                        "-      return `Today is ${(new Date).toString()}`;",
+                        "-    },",
+                        "   },",
+                        " };",
+                        " </script>"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.2.7",
+    "file_version": "1.0.4"
+}
