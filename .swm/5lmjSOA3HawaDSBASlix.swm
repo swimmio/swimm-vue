@@ -1,6 +1,6 @@
 {
     "id": "5lmjSOA3HawaDSBASlix",
-    "name": "Read Only for sub lists",
+    "name": "Read Only for sub-items",
     "dod": "In this unit you should pass a prop from Home to TreeView to allow readonly tree for sublist case.",
     "description": "Currently it is possible to edit, add child, and add entry in the sub item tree view. We want that in the case of a sub-item that the tree will be read only, and be editable only for Home. \n\nThe Home component has the information wether the Home or a sub item is need to be render. You should pass this information to the from the home component to the treeView. \n\nAfter you are done, only when clicking Home on the menu the tree should be editable (text fields, '+') and for the rest cases the tree is for read only.",
     "summary": "",
@@ -103,5 +103,6 @@
         }
     },
     "app_version": "0.2.7",
-    "file_version": "1.0.4"
+    "file_version": "1.0.4",
+    "last_commit_sha_for_swimm_patch": "e7d6ba0b77ecab41f4870d4d98642a903ab190d7"
 }
