@@ -1,0 +1,102 @@
+{
+    "id": "OlPkIxBpyjiUdrHdvITO",
+    "name": "Vue Templates",
+    "dod": " ",
+    "description": "Template - the HTML and the components that will be render.\nNote that the tags that start with `v-` are vuetify components, you can use regular HTML tags as well.\n",
+    "summary": "",
+    "hunksOrder": [
+        "src/components/Navdrawer.vue_0",
+        "src/components/Navdrawer.vue_1",
+        "src/components/TreeView.vue_0"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "walkthrough",
+    "swimmPatch": {
+        "src/components/Navdrawer.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/components/Navdrawer.vue b/src/components/Navdrawer.vue\nindex 697ef59..697ef59 100644\n--- a/src/components/Navdrawer.vue\n+++ b/src/components/Navdrawer.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "Take a look how we displaying the title with `{{ title }}`, this let vue know that the text we want to shoe is the value of the variable `title`."
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -2,7 +2,6 @@",
+                        "   <v-navigation-drawer permanent app>",
+                        "     <v-list-item>",
+                        "       <v-list-item-content>",
+                        "-        <v-list-item-title class=\"title custom-class\">{{title}}</v-list-item-title>",
+                        "         <v-list-item-subtitle> Learn how to swimm in Vue.js </v-list-item-subtitle>",
+                        "       </v-list-item-content>",
+                        "     </v-list-item>"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "`v-for` is used for list rendering.",
+                            "Here we rending the menu of the app, and each item will be shown with the icon that is set on the object."
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -9,11 +9,6 @@",
+                        " ",
+                        "     <v-divider></v-divider>",
+                        " ",
+                        "-    <v-list dense nav>",
+                        "-      <v-list-item link v-for=\"item in menuItems\" :key=\"item.title\" :to=\"item.route\">",
+                        "-        <v-list-item-icon>",
+                        "-          <v-icon>{{ item.icon }}</v-icon>",
+                        "-        </v-list-item-icon>",
+                        " ",
+                        "         <v-list-item-content>",
+                        "           <v-list-item-title>{{ item.title }}</v-list-item-title>"
+                    ]
+                }
+            ]
+        },
+        "src/components/TreeView.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/components/TreeView.vue b/src/components/TreeView.vue\nindex 1645e94..1645e94 100644\n--- a/src/components/TreeView.vue\n+++ b/src/components/TreeView.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "The v-if is used for conditional rendering, The block will be render only if the directive's expression is true.",
+                            "You can use `v-else` directive to indicate what will be shown if the expression is false",
+                            "The `v-else` must follow immediatly after the `v-if` or the `v-else-if`.",
+                            "The `@click` also can be written as `v-on:click` and it let  us to listen to DOM event and trigger JS",
+                            "`v-model` is used for 2 way binding",
+                            "`v-bind` or `:` is used to bind HTML attribute (like class or style) to JS expressions. it is also used to pass props to child component"
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -8,16 +8,6 @@",
+                        "     </v-container>",
+                        "     <v-treeview open-all :items=\"items\">",
+                        "       <template slot=\"label\" slot-scope=\"{ item }\">",
+                        "-        <v-text-field",
+                        "-          v-if=\"!readOnly\"",
+                        "-          class=\"text-field\"",
+                        "-          v-model=\"item.name\"",
+                        "-          @input=\"updateInput\"",
+                        "-          :append-icon=\"`mdi-trash-can-outline`\"",
+                        "-          @click:append=\"deleteItem(item.id)\"",
+                        "-        >",
+                        "-        </v-text-field>",
+                        "-        <div v-else>{{ item.name }}</div>",
+                        "       </template>",
+                        "       <template v-if=\"!readOnly\" slot=\"prepend\" slot-scope=\"{ item }\">",
+                        "         <v-tooltip bottom>"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.2.7",
+    "file_version": "1.0.4",
+    "last_commit_sha_for_swimm_patch": "343e7ce5add8773d8596dcc31c8623cdf324d994"
+}
