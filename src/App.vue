@@ -2,7 +2,7 @@
   <!-- App.vue -->
 
   <v-app>
-    <navdrawer :menuItems="menuItems" />
+    <navdrawer :menu-items="menuItems" />
     <!-- Sizes your content based upon application components -->
     <v-main>
       <!-- Provides the application the proper gutter -->

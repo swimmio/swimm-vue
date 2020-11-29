@@ -1,6 +1,6 @@
 <template>
   <v-container class="home">
-    <tree-view :readOnly="!isHomePage" :items="itemToDisplay" :title="title" @updateItems="updateItems" />
+    <tree-view :read-only="!isHomePage" :items="itemToDisplay" :title="title" @updateItems="updateItems" />
   </v-container>
 </template>
 
