@@ -22,7 +22,7 @@
                     "swimmHunkMetadata": {
                         "hunkComments": [
                             "The property is passed to the child component with the `v-bind` directive.",
-                            "In this step we TODO - fix the prop to be snake case (browser ignore upper case ) https://vuejs.org/v2/guide/components-props.html#Prop-Casing-camelCase-vs-kebab-case"
+                            "Why props passed in kebab case: https://vuejs.org/v2/guide/components-props.html#Prop-Casing-camelCase-vs-kebab-case"
                         ]
                     },
                     "hunkDiffLines": [
@@ -132,6 +132,5 @@
     },
     "app_version": "0.2.7",
     "file_version": "1.0.4",
-    "diff": "diff --git a/src/App.vue b/src/App.vue\nindex 7af6887..4aa4770 100644\n--- a/src/App.vue\n+++ b/src/App.vue\n@@ -2,7 +2,6 @@\n   <!-- App.vue -->\n \n   <v-app>\n-    <navdrawer :menu-items=\"menuItems\" />\n     <v-main>\n       <!-- Provides the application the proper gutter -->\n       <v-container fluid>\n@@ -29,36 +28,7 @@\n     Navdrawer,\n   },\n \n-  data: () => ({\n-    menuItems: [],\n-  }),\n   computed: {\n     ...mapState([\"items\", \"nextId\"]),\n   },\n-  mounted() {\n-    this.setMenuItems();\n-  },\n-  methods: {\n-    updateItems() {\n-      this.setMenuItems();\n-    },\n-    setMenuItems() {\n-      this.menuItems = [];\n-      this.menuItems.push({ title: \"Home\", icon: \"mdi-home\", route: \"/\" });\n-      this.menuItems.push(\n-        ...this.items.map((rootItem) => {\n-          return {\n-            title: rootItem.name,\n-            icon: \"mdi-format-list-bulleted\",\n-            route: `/${rootItem.id}`,\n-          };\n-        })\n-      );\n-      this.menuItems.push({\n-        title: \"About\",\n-        icon: \"mdi-help-box\",\n-        route: \"/about\",\n-      });\n-    },\n-  },\n </script>\ndiff --git a/src/components/Navdrawer.vue b/src/components/Navdrawer.vue\nindex 697ef59..332db40 100644\n--- a/src/components/Navdrawer.vue\n+++ b/src/components/Navdrawer.vue\n@@ -10,7 +10,7 @@\n     <v-divider></v-divider>\n \n     <v-list dense nav>\n-      <v-list-item link v-for=\"item in menuItems\" :key=\"item.title\" :to=\"item.route\">\n+\n         <v-list-item-icon>\n           <v-icon>{{ item.icon }}</v-icon>\n         </v-list-item-icon>\n@@ -26,9 +26,7 @@\n <script>\n export default {\n   name: \"Navdrawer\",\n-  props: {\n+\n-    menuItems: Array\n-  },\n   data() {\n     return {\n       title: \"Lists Pool\",\n",
-    "last_commit_sha_for_swimm_patch": "12a621fe1e019353f47fe50619ac00c0b12d28f3"
+    "last_commit_sha_for_swimm_patch": "e9b9efe58d5ff3cdc1446b8ff44167cd491ac713"
 }
