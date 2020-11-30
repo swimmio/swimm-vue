@@ -2,7 +2,7 @@
   <div>
     <v-container class="text-center">
       <v-toolbar-title class="custom-class">{{ title }}</v-toolbar-title>
-      <v-btn v-if="!readOnly" icon @click="addEntrie"
+      <v-btn v-if="!readOnly" icon @click="addEntry"
         ><v-icon>mdi-plus</v-icon></v-btn
       >
     </v-container>
@@ -91,7 +91,7 @@ export default {
         this.updateItems();
       }, 1000);
     },
-    addEntrie() {
+    addEntry() {
       this.items.push({
         id: this.nextId,
         name: "",
