@@ -9,14 +9,12 @@
     </v-main>
 
     <v-footer app>
-      Create lists of lists
     </v-footer>
   </v-app>
 </template>
 
 <script>
 import Navdrawer from "./components/Navdrawer.vue";
-//import TreeView from "./components/TreeView.vue";
 import { mapState } from "vuex";
 
 export default {
