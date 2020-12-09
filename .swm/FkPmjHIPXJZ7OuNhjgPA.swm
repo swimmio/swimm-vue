@@ -1,0 +1,108 @@
+{
+    "id": "FkPmjHIPXJZ7OuNhjgPA",
+    "name": "Events",
+    "dod": "",
+    "description": "In this unit we will see how to run Javascript on events, and how to create custom events.",
+    "summary": "",
+    "hunksOrder": [
+        "src/components/TreeView.vue_0",
+        "src/components/TreeView.vue_1",
+        "src/components/TreeView.vue_2",
+        "src/views/Home.vue_0"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "walkthrough",
+    "swimmPatch": {
+        "src/components/TreeView.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/components/TreeView.vue b/src/components/TreeView.vue\nindex c3b2def..c3b2def 100644\n--- a/src/components/TreeView.vue\n+++ b/src/components/TreeView.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "In this step We can use the `v-on` or  in short `@` to let vue know what method to run on event.",
+                            "In the example here we have a text field where our user updates the text of an item. Once the user enter an input we would like to save the new state."
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -11,9 +11,8 @@",
+                        "         <v-text-field",
+                        "           v-if=\"!readOnly\"",
+                        "           class=\"text-field\"",
+                        "           v-model=\"item.name\"",
+                        "-          @input=\"updateInput\"",
+                        "           :append-icon=\"`mdi-trash-can-outline`\"",
+                        "           @click:append=\"deleteItem(item.id)\"",
+                        "         >",
+                        "         </v-text-field>"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -84,13 +84,6 @@",
+                        "     updateItems() {",
+                        "       this.$emit(\"updateItems\", this.items);",
+                        "     },",
+                        "-    updateInput() {",
+                        "-      // triggered on input, should only update the local storage only when user finished typing (debouncing)",
+                        "-      if (this.timeout) clearTimeout(this.timeout);",
+                        "-      this.timeout = setTimeout(() => {",
+                        "-        this.updateItems();",
+                        "-      }, 1000);",
+                        "-    },",
+                        "     addEntry() {",
+                        "       this.items.push({",
+                        "         id: this.nextId,"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "In this step The logic of saving the items is on the parent component - Home, We use `$emit` to create a new custom event with the name  `updateItems` and we can pass parameters to the even."
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -81,9 +81,6 @@",
+                        "       this.saveNextIdToLocalStorage(id + 1);",
+                        "       this.updateItems();",
+                        "     },",
+                        "-    updateItems() {",
+                        "-      this.$emit(\"updateItems\", this.items);",
+                        "-    },",
+                        "     updateInput() {",
+                        "       // triggered on input, should only update the local storage only when user finished typing (debouncing)",
+                        "       if (this.timeout) clearTimeout(this.timeout);"
+                    ]
+                }
+            ]
+        },
+        "src/views/Home.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/views/Home.vue b/src/views/Home.vue\nindex b847144..b847144 100644\n--- a/src/views/Home.vue\n+++ b/src/views/Home.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "In the parent component we can use the `@` directive on the custom event."
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -1,6 +1,5 @@",
+                        " <template>",
+                        "   <v-container class=\"home\">",
+                        "-    <tree-view :read-only=\"!isHomePage\" :items=\"itemToDisplay\" :title=\"title\" @updateItems=\"updateItems\" />",
+                        "   </v-container>",
+                        " </template>",
+                        " "
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.2.9",
+    "file_version": "1.0.4"
+}
