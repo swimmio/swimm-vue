@@ -1,0 +1,94 @@
+{
+    "id": "HQhCU8uO0ciNEtdGxEkJ",
+    "name": "/item-id to show item",
+    "dod": "In this unit you should implement a routing to a list item.",
+    "description": "When a user clicks on a menu item of an entry it should display the item and it's children in a read-only mode. All the logic of displaying the item is in the Home component. Your task is to make the routing and the displaying to happen. Don't be shy to use hints and google :).",
+    "summary": "",
+    "hunksOrder": [
+        "src/App.vue_0",
+        "src/router/index.js_0",
+        "src/router/index.js_1"
+    ],
+    "tests": [],
+    "hints": [
+        "Search how you can pass parameters through the router",
+        "Search how to pass props to a router component "
+    ],
+    "play_mode": null,
+    "swimmPatch": {
+        "src/App.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/App.vue b/src/App.vue\nindex 36db82e..387b247 100644\n--- a/src/App.vue\n+++ b/src/App.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "We declaring the route of each menu item."
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -50,7 +50,6 @@",
+                        "           return {",
+                        "             title: rootItem.name,",
+                        "             icon: \"mdi-format-list-bulleted\",",
+                        "-            route: `/${rootItem.id}`,",
+                        "           };",
+                        "         })",
+                        "       );"
+                    ]
+                }
+            ]
+        },
+        "src/router/index.js": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/router/index.js b/src/router/index.js\nindex b3321ef..0865311 100644\n--- a/src/router/index.js\n+++ b/src/router/index.js",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "We do this to a dynamic prop that can be pass to the router component."
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -5,11 +5,6 @@",
+                        " ",
+                        " Vue.use(VueRouter)",
+                        " ",
+                        "-function dynamicPropsFn (route) {",
+                        "-  return {",
+                        "-    itemId:  parseInt(route.params.id)",
+                        "-  }",
+                        "-}",
+                        " ",
+                        " const routes = [",
+                        "   {"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "In this step pass the props to the component"
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -22,12 +17,6 @@",
+                        "     name: 'About',",
+                        "     component: About",
+                        "   },",
+                        "-  {",
+                        "-    path: '/:id',",
+                        "-    name: 'Item',",
+                        "-    component: Home,",
+                        "-    props: dynamicPropsFn,",
+                        "-  },",
+                        " ]",
+                        " ",
+                        " const router = new VueRouter({"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.2.9",
+    "file_version": "1.0.4"
+}
