@@ -1,7 +1,7 @@
 {
     "id": "OlPkIxBpyjiUdrHdvITO",
     "name": "Vue Templates",
-    "dod": " ",
+    "dod": "",
     "description": "Template - the HTML and the components that will be render.\nNote that the tags that start with `v-` are vuetify components, you can use regular HTML tags as well.\nIn this unit we will go through some of the syntax and directive vue templates offering.\n\nI suggest to open up the app and the Vue dev tools, take a look and see how it corresponding with the code \n\n![Screen Shot 20201209 at 18.53.57.png](https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FDvJKcoPbOxqDEprL3Lun%2Fimg%2F98a84573-4421-40f5-b82f-d8dd83ce0b61.png?alt=media&token=4980aaf7-7366-48d2-a111-80faa8f8a0e5)",
     "summary": "",
     "hunksOrder": [
@@ -12,7 +12,7 @@
     ],
     "tests": [],
     "hints": [],
-    "play_mode": null,
+    "play_mode": "walkthrough",
     "swimmPatch": {
         "src/components/Navdrawer.vue": {
             "diffType": "MODIFIED",
@@ -128,5 +128,5 @@
     },
     "app_version": "0.2.9",
     "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "9bd2010f40c8a8c1005cd53e66fe0d15d5c0f734"
+    "last_commit_sha_for_swimm_patch": "dd390e6ad0ef2fad5ec225c05373cfc43442c14e"
 }
