@@ -9,6 +9,7 @@
     </v-main>
 
     <v-footer app>
+      <darkmode-switch />
     </v-footer>
   </v-app>
 </template>
@@ -16,11 +17,13 @@
 <script>
 import Navdrawer from "./components/Navdrawer.vue";
 import { mapState } from "vuex";
+import DarkmodeSwitch from './components/DarkmodeSwitch.vue';
 
 export default {
   name: "App",
   components: {
     Navdrawer,
+    DarkmodeSwitch
   },
 
   data: () => ({
