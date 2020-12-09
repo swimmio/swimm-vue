@@ -12,7 +12,7 @@
     "tests": [],
     "hints": [
         "Search how you can pass parameters through the router",
-        "Search how to pass props to a router component "
+        "Search how to pass dynamic props to component through the Vue router"
     ],
     "play_mode": null,
     "swimmPatch": {
@@ -27,7 +27,7 @@
                         ]
                     },
                     "hunkDiffLines": [
-                        "@@ -50,7 +50,6 @@",
+                        "@@ -46,7 +46,6 @@",
                         "           return {",
                         "             title: rootItem.name,",
                         "             icon: \"mdi-format-list-bulleted\",",
@@ -90,5 +90,6 @@
         }
     },
     "app_version": "0.2.9",
-    "file_version": "1.0.4"
+    "file_version": "1.0.4",
+    "last_commit_sha_for_swimm_patch": "aa8f810e7b0afd45a2d5ef28ac02f43729ea7045"
 }
