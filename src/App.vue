@@ -1,19 +1,15 @@
 <template>
   <!-- App.vue -->
-
   <v-app>
     <navdrawer :menu-items="menuItems" />
-    <!-- Sizes your content based upon application components -->
     <v-main>
-      <!-- Provides the application the proper gutter -->
       <v-container fluid>
-        <!-- If using vue-router -->
         <router-view @updateItems="updateItems"></router-view>
       </v-container>
     </v-main>
 
     <v-footer app>
-      <!-- -->
+      Create lists of lists
     </v-footer>
   </v-app>
 </template>
