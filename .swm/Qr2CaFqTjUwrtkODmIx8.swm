@@ -1,7 +1,7 @@
 {
     "id": "Qr2CaFqTjUwrtkODmIx8",
     "name": "Props",
-    "dod": " ",
+    "dod": "",
     "description": "",
     "summary": "",
     "hunksOrder": [
@@ -26,14 +26,14 @@
                         ]
                     },
                     "hunkDiffLines": [
-                        "@@ -2,7 +2,6 @@",
+                        "@@ -1,7 +1,6 @@",
+                        " <template>",
                         "   <!-- App.vue -->",
-                        " ",
                         "   <v-app>",
                         "-    <navdrawer :menu-items=\"menuItems\" />",
                         "     <v-main>",
-                        "       <!-- Provides the application the proper gutter -->",
-                        "       <v-container fluid>"
+                        "       <v-container fluid>",
+                        "         <router-view @updateItems=\"updateItems\"></router-view>"
                     ]
                 },
                 {
@@ -43,8 +43,8 @@
                         ]
                     },
                     "hunkDiffLines": [
-                        "@@ -29,36 +28,7 @@",
-                        "     Navdrawer,",
+                        "@@ -26,36 +25,7 @@",
+                        "     DarkmodeSwitch",
                         "   },",
                         " ",
                         "-  data: () => ({",
@@ -79,7 +79,7 @@
                         "-      });",
                         "-    },",
                         "-  },",
-                        " </script>"
+                        " };"
                     ]
                 }
             ]
@@ -130,7 +130,7 @@
             ]
         }
     },
-    "app_version": "0.2.7",
+    "app_version": "0.2.9",
     "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "e9b9efe58d5ff3cdc1446b8ff44167cd491ac713"
+    "last_commit_sha_for_swimm_patch": "9b3907817d5557b7b40d9613d190a43215c1cc17"
 }
