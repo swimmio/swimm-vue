@@ -1,0 +1,62 @@
+{
+    "id": "6YWcOucxztOoZkTO6Zkb",
+    "name": "Update menu",
+    "dod": "Update the side menu once an entry has change.",
+    "description": "Currently when a new entry on the list is added it shows on the navdrawer menu. We would like the menu to be update if an entry is change (added deleted or updated).\n",
+    "summary": "",
+    "hunksOrder": [
+        "src/App.vue_0",
+        "src/App.vue_1"
+    ],
+    "tests": [],
+    "hints": [
+        "Understand where the menu is set and when it should be update",
+        "router-view is playing the part of router view",
+        "Use a custom event to let App component know that items has changed."
+    ],
+    "play_mode": "handson",
+    "swimmPatch": {
+        "src/App.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/App.vue b/src/App.vue\nindex 36db82e..040c9c5 100644\n--- a/src/App.vue\n+++ b/src/App.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -8,7 +8,8 @@",
+                        "       <!-- Provides the application the proper gutter -->",
+                        "       <v-container fluid>",
+                        "         <!-- If using vue-router -->",
+                        "-        <router-view @updateItems=\"updateItems\"></router-view>",
+                        "+        <!-- If you havn't review vue router yet it is ok, address the router view as if it was The Home component -->",
+                        "+        <router-view></router-view>",
+                        "       </v-container>",
+                        "     </v-main>",
+                        " "
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -39,9 +40,6 @@",
+                        "     this.setMenuItems();",
+                        "   },",
+                        "   methods: {",
+                        "-    updateItems() {",
+                        "-      this.setMenuItems();",
+                        "-    },",
+                        "     setMenuItems() {",
+                        "       this.menuItems = [];",
+                        "       this.menuItems.push({ title: \"Home\", icon: \"mdi-home\", route: \"/\" });"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.2.9",
+    "file_version": "1.0.4"
+}
