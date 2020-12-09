@@ -30,7 +30,7 @@
                         "   <div>",
                         "     <v-container class=\"text-center\">",
                         "       <v-toolbar-title class=\"custom-class\">{{ title }}</v-toolbar-title>",
-                        "-      <v-btn v-if=\"!readOnly\" icon @click=\"addEntrie\"",
+                        "-      <v-btn v-if=\"!readOnly\" icon @click=\"addEntry\"",
                         "+      <v-btn icon @click=\"addEntrie\"",
                         "         ><v-icon>mdi-plus</v-icon></v-btn",
                         "       >",
@@ -104,5 +104,6 @@
     },
     "app_version": "0.2.7",
     "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "e7d6ba0b77ecab41f4870d4d98642a903ab190d7"
+    "last_commit_sha_for_swimm_patch": "682c1ec06ef3f4e1053e408f2b277c1f0b1950ab",
+    "diff": "diff --git a/src/components/TreeView.vue b/src/components/TreeView.vue\nindex 1645e94..2c78102 100644\n--- a/src/components/TreeView.vue\n+++ b/src/components/TreeView.vue\n@@ -2,14 +2,13 @@\n   <div>\n     <v-container class=\"text-center\">\n       <v-toolbar-title class=\"custom-class\">{{ title }}</v-toolbar-title>\n-      <v-btn v-if=\"!readOnly\" icon @click=\"addEntry\"\n+      <v-btn icon @click=\"addEntrie\"\n         ><v-icon>mdi-plus</v-icon></v-btn\n       >\n     </v-container>\n     <v-treeview open-all :items=\"items\">\n       <template slot=\"label\" slot-scope=\"{ item }\">\n         <v-text-field\n-          v-if=\"!readOnly\"\n           class=\"text-field\"\n           v-model=\"item.name\"\n           @input=\"updateInput\"\n@@ -17,9 +16,9 @@\n           @click:append=\"deleteItem(item.id)\"\n         >\n         </v-text-field>\n-        <div v-else>{{ item.name }}</div>\n+        <!-- <div>{{ item.name }}</div> -->\n       </template>\n-      <template v-if=\"!readOnly\" slot=\"prepend\" slot-scope=\"{ item }\">\n+      <template slot=\"prepend\" slot-scope=\"{ item }\">\n         <v-tooltip bottom>\n           <template v-slot:activator=\"{ on, attrs }\">\n             <v-btn v-bind=\"attrs\" v-on=\"on\" icon @click=\"addChild(item)\">\n@@ -41,7 +40,6 @@\n   props: {\n     items: Array,\n     title: String,\n-    readOnly: Boolean,\n   },\n   computed: {\n     ...mapState([\"nextId\"]),\ndiff --git a/src/views/Home.vue b/src/views/Home.vue\nindex b847144..0477f98 100644\n--- a/src/views/Home.vue\n+++ b/src/views/Home.vue\n@@ -1,6 +1,6 @@\n <template>\n   <v-container class=\"home\">\n-    <tree-view :read-only=\"!isHomePage\" :items=\"itemToDisplay\" :title=\"title\" @updateItems=\"updateItems\" />\n+    <tree-view :items=\"itemToDisplay\" :title=\"title\" @updateItems=\"updateItems\" />\n   </v-container>\n </template>\n \n"
 }
