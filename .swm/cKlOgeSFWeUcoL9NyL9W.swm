@@ -1,0 +1,140 @@
+{
+    "id": "cKlOgeSFWeUcoL9NyL9W",
+    "name": "Vue Router",
+    "dod": "",
+    "description": "In this unit we will walkthrough vue router and how we can use it.",
+    "summary": "",
+    "hunksOrder": [
+        "src/router/index.js_0",
+        "src/router/index.js_1",
+        "src/router/index.js_2",
+        "src/App.vue_0",
+        "src/components/Navdrawer.vue_0",
+        "src/App.vue_1"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "walkthrough",
+    "swimmPatch": {
+        "src/router/index.js": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/router/index.js b/src/router/index.js\nindex b3321ef..b3321ef 100644\n--- a/src/router/index.js\n+++ b/src/router/index.js",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -1,7 +1,1 @@",
+                        "-import Vue from 'vue';",
+                        "-import VueRouter from 'vue-router';",
+                        "-import Home from '../views/Home.vue';",
+                        "-import About from '../views/About';",
+                        "-",
+                        "-Vue.use(VueRouter)",
+                        " "
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -12,13 +12,8 @@",
+                        " }",
+                        " ",
+                        " const routes = [",
+                        "-  {",
+                        "-    path: '/',",
+                        "-    name: 'Home',",
+                        "-    component: Home,",
+                        "-  },",
+                        "   {",
+                        "     path: '/about',",
+                        "     name: 'About',",
+                        "     component: About",
+                        "   },"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -30,10 +30,3 @@",
+                        "   },",
+                        " ]",
+                        " ",
+                        "-const router = new VueRouter({",
+                        "-  mode: 'history',",
+                        "-  base: process.env.BASE_URL,",
+                        "-  routes",
+                        "-})",
+                        "-",
+                        "-export default router"
+                    ]
+                }
+            ]
+        },
+        "src/App.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/App.vue b/src/App.vue\nindex 36db82e..36db82e 100644\n--- a/src/App.vue\n+++ b/src/App.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -8,7 +8,6 @@",
+                        "       <!-- Provides the application the proper gutter -->",
+                        "       <v-container fluid>",
+                        "         <!-- If using vue-router -->",
+                        "-        <router-view @updateItems=\"updateItems\"></router-view>",
+                        "       </v-container>",
+                        "     </v-main>",
+                        " "
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -44,7 +44,6 @@",
+                        "     },",
+                        "     setMenuItems() {",
+                        "       this.menuItems = [];",
+                        "-      this.menuItems.push({ title: \"Home\", icon: \"mdi-home\", route: \"/\" });",
+                        "       this.menuItems.push(",
+                        "         ...this.items.map((rootItem) => {",
+                        "           return {"
+                    ]
+                }
+            ]
+        },
+        "src/components/Navdrawer.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/components/Navdrawer.vue b/src/components/Navdrawer.vue\nindex 697ef59..697ef59 100644\n--- a/src/components/Navdrawer.vue\n+++ b/src/components/Navdrawer.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -10,7 +10,6 @@",
+                        "     <v-divider></v-divider>",
+                        " ",
+                        "     <v-list dense nav>",
+                        "-      <v-list-item link v-for=\"item in menuItems\" :key=\"item.title\" :to=\"item.route\">",
+                        "         <v-list-item-icon>",
+                        "           <v-icon>{{ item.icon }}</v-icon>",
+                        "         </v-list-item-icon>"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.2.9",
+    "file_version": "1.0.4",
+    "last_commit_sha_for_swimm_patch": "d14de905c9ca29830067ee866399780823b936b1"
+}
