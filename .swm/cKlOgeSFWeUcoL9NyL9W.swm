@@ -2,7 +2,7 @@
     "id": "cKlOgeSFWeUcoL9NyL9W",
     "name": "Vue Router",
     "dod": "",
-    "description": "In this unit we will walkthrough vue router and how we can use it.",
+    "description": "In this unit we will walkthrough Vue router and how we can use it.",
     "summary": "",
     "hunksOrder": [
         "src/router/index.js_0",
@@ -22,7 +22,9 @@
             "hunks": [
                 {
                     "swimmHunkMetadata": {
-                        "hunkComments": []
+                        "hunkComments": [
+                            "In this step creating a file for the router, import `vue` ans set it to use `VueRouter` (vue router should be installed) and the Vue components that will be displayed."
+                        ]
                     },
                     "hunkDiffLines": [
                         "@@ -1,7 +1,1 @@",
@@ -37,7 +39,9 @@
                 },
                 {
                     "swimmHunkMetadata": {
-                        "hunkComments": []
+                        "hunkComments": [
+                            "In this step we declaring what component will be showed for each rout path."
+                        ]
                     },
                     "hunkDiffLines": [
                         "@@ -12,13 +12,8 @@",
@@ -58,7 +62,9 @@
                 },
                 {
                     "swimmHunkMetadata": {
-                        "hunkComments": []
+                        "hunkComments": [
+                            "Read about history mode : https://router.vuejs.org/guide/essentials/history-mode.html"
+                        ]
                     },
                     "hunkDiffLines": [
                         "@@ -30,10 +30,3 @@",
@@ -82,7 +88,9 @@
             "hunks": [
                 {
                     "swimmHunkMetadata": {
-                        "hunkComments": []
+                        "hunkComments": [
+                            "The component will be displayed where the ` <router-view>` tags are declared. In this app we have only one router view, but it is possible to have more than one (than you will have to name them)."
+                        ]
                     },
                     "hunkDiffLines": [
                         "@@ -8,7 +8,6 @@",
@@ -97,7 +105,9 @@
                 },
                 {
                     "swimmHunkMetadata": {
-                        "hunkComments": []
+                        "hunkComments": [
+                            "In this step we setting the values for the menu, including the route path."
+                        ]
                     },
                     "hunkDiffLines": [
                         "@@ -44,7 +44,6 @@",
@@ -118,7 +128,10 @@
             "hunks": [
                 {
                     "swimmHunkMetadata": {
-                        "hunkComments": []
+                        "hunkComments": [
+                            "Here is an example of a component that has routing. the `:to` attribute is bing the the value of the `item.route`.  and on click it will navigate to the path and the corresponding component will be showed.",
+                            "There are special tags to declare a link `<router-link to=\"/about\">Navigate to About </ router-link>`, The Vuetify components that we are using act as router links and that is why we don't need to use these tags in this case."
+                        ]
                     },
                     "hunkDiffLines": [
                         "@@ -10,7 +10,6 @@",
@@ -136,5 +149,5 @@
     },
     "app_version": "0.2.9",
     "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "d14de905c9ca29830067ee866399780823b936b1"
+    "last_commit_sha_for_swimm_patch": "96d094eafe125c45605c1ce6c9d42b7a2d3e425b"
 }
