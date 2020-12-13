@@ -12,7 +12,7 @@
     ],
     "tests": [],
     "hints": [
-        "Have you used props?",
+        "Did you used props?",
         "What directive can be used to decide if a block should be render to the DOM?",
         "isHomePage can helps you to decide if the view should be read only.",
         "Use v-if and v-else to control what will be rendered"
@@ -106,5 +106,5 @@
     },
     "app_version": "0.2.9",
     "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "e43fe987d3dc1bddc1a6173afa550f71f09c07f1"
+    "last_commit_sha_for_swimm_patch": "fec8d3f85e6fc87fbebf6b693d2827d0a7d5bbb5"
 }
