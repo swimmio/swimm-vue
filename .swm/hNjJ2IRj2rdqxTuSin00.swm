@@ -1,8 +1,8 @@
 {
     "id": "hNjJ2IRj2rdqxTuSin00",
-    "name": "Fix AboutView",
+    "name": "HelloWorld",
     "dod": "In this unit you should display the hello world component and compute the timestamp to the an header.",
-    "description": "The about view has change and need a fix, some things are missing.\nThe HelloWorld component should be display and an header should tell me the time and date.\n\n![image.png](https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FDvJKcoPbOxqDEprL3Lun%2Fimg%2F4c80d623-605c-4bca-a044-f9e0bce781a1.png?alt=media&token=dfd4868c-88b1-4c02-98ea-3c241f6a2d72)",
+    "description": "We would like to use the HelloWorld component in the about page, It should be display inside the component container.\nIn addition we would like to display the current time and date to the user, just to checkout how to use computed functions.",
     "summary": "",
     "hunksOrder": [
         "src/views/About.vue_0"
@@ -49,6 +49,7 @@
             ]
         }
     },
-    "app_version": "0.2.7",
-    "file_version": "1.0.4"
+    "app_version": "0.2.9",
+    "file_version": "1.0.4",
+    "last_commit_sha_for_swimm_patch": "cf342aa064642ff4b175e4b384beebde09be57dd"
 }
