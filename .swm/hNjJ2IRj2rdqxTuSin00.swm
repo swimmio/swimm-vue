@@ -3,7 +3,7 @@
     "name": "HelloWorld",
     "dod": "In this unit you should display the hello world component and compute the timestamp to the an header.",
     "description": "We would like to use the HelloWorld component in the about page, It should be display inside the component container.\nIn addition we would like to display the current time and date to the user, just to checkout how to use computed functions.",
-    "summary": "",
+    "summary": "Read more about computed properties from the official vue [documentation](https://vuejs.org/v2/guide/computed.html)",
     "hunksOrder": [
         "src/views/About.vue_0"
     ],
@@ -51,5 +51,5 @@
     },
     "app_version": "0.2.9",
     "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "cf342aa064642ff4b175e4b384beebde09be57dd"
+    "last_commit_sha_for_swimm_patch": "f4e098d0262090dea5f6aead1da3758fb2988aba"
 }
