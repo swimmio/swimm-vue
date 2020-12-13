@@ -2,7 +2,7 @@
     "id": "MOyHYPbeeLQ7bviTZzU1",
     "name": "Dark mode switch",
     "dod": "In this unit you should Create a dark mode switch component from scratch.",
-    "description": "Create a basic component from scratch!\nWe would like to add a `dark mode` feature that will allow the user to turn on/off dark mode.\nIn this unit you will need to create a new component `DarkmodeSwitch` that will be displayed in the App footer.  \nUse can Vuetify switch component : https://vuetifyjs.com/en/components/switches/.   \n\nUse the deafult dark mode preference provided by Vuetify (look at theme).\n\nThe component should look like that: \nThe lable should change base on current the state.\n \n![Screen Shot 20201209 at 16.29.19.png](https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FDvJKcoPbOxqDEprL3Lun%2Fimg%2F4c41d344-8108-4bb0-b908-6364f3155b77.png?alt=media&token=d3b0859b-0d63-4959-a921-060f169b71a7)\n\n  ![Screen Shot 20201209 at 16.29.05.png](https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FDvJKcoPbOxqDEprL3Lun%2Fimg%2F3fc67e96-b440-4688-9d23-5fba74374814.png?alt=media&token=595c719a-61f6-4b04-bc25-574b3b6ae075)",
+    "description": "Create a basic component from scratch!\nWe would like to add a `dark mode` feature that will allow the user to turn on/off dark mode.\nIn this unit you will need to create a new component `DarkmodeSwitch` that will be displayed in the App footer.  \nUse can [Vuetify switch component](https://vuetifyjs.com/en/components/switches/).   \n\nUse the deafult dark mode preference provided by Vuetify (look at theme).\n\nThe component should look like that: \nThe lable should change base on current the state.\n \n![Screen Shot 20201209 at 16.29.19.png](https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FDvJKcoPbOxqDEprL3Lun%2Fimg%2F4c41d344-8108-4bb0-b908-6364f3155b77.png?alt=media&token=d3b0859b-0d63-4959-a921-060f169b71a7)\n\n  ![Screen Shot 20201209 at 16.29.05.png](https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FDvJKcoPbOxqDEprL3Lun%2Fimg%2F3fc67e96-b440-4688-9d23-5fba74374814.png?alt=media&token=595c719a-61f6-4b04-bc25-574b3b6ae075)",
     "summary": "",
     "hunksOrder": [
         "src/App.vue_0",
@@ -94,5 +94,5 @@
     },
     "app_version": "0.2.9",
     "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "2e466cdb692cc208c70d663b75d036e42864afc5"
+    "last_commit_sha_for_swimm_patch": "98b4d008bea5afeec4f34fa1b8762fcf3dafcd70"
 }
