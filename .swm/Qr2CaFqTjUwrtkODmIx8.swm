@@ -3,7 +3,7 @@
     "name": "Props",
     "dod": "",
     "description": "",
-    "summary": "",
+    "summary": "For further read about Props checkout the offical [documentation](https://vuejs.org/v2/guide/components-props.html#Prop-Casing-camelCase-vs-kebab-case)",
     "hunksOrder": [
         "src/components/Navdrawer.vue_1",
         "src/components/Navdrawer.vue_0",
@@ -21,8 +21,7 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "The property is passed to the child component with the `v-bind` directive.",
-                            "Why props passed in kebab case: https://vuejs.org/v2/guide/components-props.html#Prop-Casing-camelCase-vs-kebab-case"
+                            "The property is passed to the child component with the `v-bind` directive."
                         ]
                     },
                     "hunkDiffLines": [
@@ -39,7 +38,7 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "In the app script the `menuItems` array is created and being set, its value change over time and being update on the child component (and rendered to the DOM). "
+                            "In the app script the `menuItems` array is created and being set, its value change over time and being update on the child component `navdrawer` (and rendered to the DOM). "
                         ]
                     },
                     "hunkDiffLines": [
@@ -132,5 +131,5 @@
     },
     "app_version": "0.2.9",
     "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "9b3907817d5557b7b40d9613d190a43215c1cc17"
+    "last_commit_sha_for_swimm_patch": "2767acf516f904cccb9e7ebf08104f75a317fb12"
 }
