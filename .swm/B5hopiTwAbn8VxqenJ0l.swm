@@ -16,7 +16,7 @@
         "The save logic should stay in the Home component (it is already been done), use events to trigger the save.",
         "Search how you can use parameters with events."
     ],
-    "play_mode": null,
+    "play_mode": "handson",
     "swimmPatch": {
         "src/components/TreeView.vue": {
             "diffType": "MODIFIED",
@@ -121,5 +121,6 @@
         }
     },
     "app_version": "0.2.9",
-    "file_version": "1.0.4"
+    "file_version": "1.0.4",
+    "last_commit_sha_for_swimm_patch": "d772a91a91ba9d925037ce67a97bffd606fb1d16"
 }
