@@ -1,8 +1,8 @@
 {
     "id": "LQdLZBZD713jOf189eqS",
-    "name": "Component <script>",
+    "name": "<script>",
     "dod": "",
-    "description": "In this unit we will go over the content of `<script>` tags of a Vue component.",
+    "description": "The data and logic for the component goes in the <script> tag.",
     "summary": "",
     "hunksOrder": [
         "src/views/About.vue_0",
@@ -60,7 +60,7 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "In this step we importing all of the dependancies"
+                            "You can import components and other JS code and models  that you would like to use in the component."
                         ]
                     },
                     "hunkDiffLines": [
@@ -79,6 +79,7 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
+                            "The export object is what allows you to define and export this named component and reuse it across your application.",
                             "You can give a name to the component, it is useful for recursive components, debugging (dev tools) and when using `is` attribute in a template."
                         ]
                     },
@@ -97,7 +98,8 @@
                     "swimmHunkMetadata": {
                         "hunkComments": [
                             "`data` is a function that returns an object with data that can used in the template and passed to child components (as props) and inside the script with the `this` keyword.",
-                            "Note that data is reactive, the DOM will be rendered again when it changes."
+                            "Note that data is reactive, the DOM will be rendered again when it changes.",
+                            "This data is private, and only for the component itself to use. Other components do not have access to it."
                         ]
                     },
                     "hunkDiffLines": [
@@ -137,7 +139,7 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "`props` are data that is bind from a parent component."
+                            "properties are the way that we pass data from a parent component down to it's child components (using the bind directive)."
                         ]
                     },
                     "hunkDiffLines": [
