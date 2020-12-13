@@ -2,7 +2,7 @@
     "id": "LQdLZBZD713jOf189eqS",
     "name": "<script>",
     "dod": "",
-    "description": "The data and logic for the component goes in the <script> tag.",
+    "description": "The script tag contains the component’s JavaScript code. Within this we can do things like import other components, or other packages we need for our component to work and handle the data and logic of the component.",
     "summary": "",
     "hunksOrder": [
         "src/views/About.vue_0",
