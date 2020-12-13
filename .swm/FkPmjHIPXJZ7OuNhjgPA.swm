@@ -1,7 +1,7 @@
 {
     "id": "FkPmjHIPXJZ7OuNhjgPA",
     "name": "Events2",
-    "dod": "",
+    "dod": "In this unit you should Creare",
     "description": "In this unit we will see how to run Javascript on events, and how to create custom events.",
     "summary": "",
     "hunksOrder": [
@@ -12,7 +12,7 @@
     ],
     "tests": [],
     "hints": [],
-    "play_mode": "walkthrough",
+    "play_mode": null,
     "swimmPatch": {
         "src/components/TreeView.vue": {
             "diffType": "MODIFIED",
