@@ -2,7 +2,7 @@
     "id": "Qr2CaFqTjUwrtkODmIx8",
     "name": "Props",
     "dod": "",
-    "description": "",
+    "description": "A prop is a property on a component.\nThis is where you define the data that the component should be expecting from its parent component.\nProps are a one-way-down binding between the child property and the parent one, when the parent property updates, it will flow down to the child, but not the other way around",
     "summary": "For further read about Props checkout the offical [documentation](https://vuejs.org/v2/guide/components-props.html#Prop-Casing-camelCase-vs-kebab-case)",
     "hunksOrder": [
         "src/components/Navdrawer.vue_1",
@@ -108,7 +108,6 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "Props are a one-way-down binding between the child property and the parent one, when the parent property updates, it will flow down to the child, but not the other way around",
                             "Add the type of the prop help with validation. You can also add if the props is required or add a default `propC: {       type: String,       required: true     },`"
                         ]
                     },
@@ -131,5 +130,5 @@
     },
     "app_version": "0.2.9",
     "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "2767acf516f904cccb9e7ebf08104f75a317fb12"
+    "last_commit_sha_for_swimm_patch": "44512e6ebac005a245e71908ec1b3e9b3a948803"
 }
