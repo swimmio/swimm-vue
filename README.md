@@ -1,9 +1,7 @@
 # swimm-vue
 
-Welcome to swimm-vue repository!
-This project has been created in order to transfer knowlage about the usage of Vue.js.  
-All of the learning is taken via Swimm.io platform.  
+Welcome to swimm-vue repository! 
 
-In order to make the best of this program you should know some knowlage javascript and web/front-end development.
-
-Clone this repository to your workstation and use the `swimm start` cli command in the project folder (or open the repository through swimm ui).
+This project has been created in order to transfer knowledge about the basic usage of Vue.js.  
+In order to make the best of this program you should have some knowledge in javascript and web/front-end development.  
+Clone this repository to your workstation and use the `swimm install` cli command in the project folder (or open the repository through swimm ui).  
