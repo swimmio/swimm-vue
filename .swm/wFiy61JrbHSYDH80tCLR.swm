@@ -1,0 +1,44 @@
+{
+    "id": "wFiy61JrbHSYDH80tCLR",
+    "name": "unit",
+    "dod": "",
+    "description": "asdsad",
+    "summary": "",
+    "hunksOrder": [
+        "src/components/HelloWorld.vue_0"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "walkthrough",
+    "swimmPatch": {
+        "src/components/HelloWorld.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/components/HelloWorld.vue b/src/components/HelloWorld.vue\nindex ed4d5d1..ed4d5d1 100644\n--- a/src/components/HelloWorld.vue\n+++ b/src/components/HelloWorld.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -2,12 +2,6 @@",
+                        "   <v-container>",
+                        "     <v-row class=\"text-center\">",
+                        "       <v-col cols=\"12\">",
+                        "-        <v-img",
+                        "-          :src=\"require('../assets/pexels-miles-hardacre-2404370.jpg')\"",
+                        "-          class=\"my-3\"",
+                        "-          contain",
+                        "-          height=\"600\"",
+                        "-        />",
+                        "       </v-col>",
+                        " ",
+                        "       <v-col class=\"mb-4\">"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.3.0",
+    "file_version": "1.0.4",
+    "last_commit_sha_for_swimm_patch": "6972dc2f34fe490f992b5b3f163426d3e8d5720a"
+}

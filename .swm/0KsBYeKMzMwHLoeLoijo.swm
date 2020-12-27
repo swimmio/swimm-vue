@@ -1,0 +1,164 @@
+{
+    "id": "0KsBYeKMzMwHLoeLoijo",
+    "name": "Vue Router",
+    "dod": "",
+    "description": "how to route",
+    "summary": "",
+    "hunksOrder": [
+        "src/router/index.js_0",
+        "src/App.vue_0",
+        "src/components/Navdrawer.vue_0",
+        "src/App.vue_1"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "walkthrough",
+    "quiz": {
+        "questions": [
+            {
+                "question": "What router-link attribute is used to set navigation route",
+                "answerIndex": 2,
+                "image" : "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif",
+                "options": [
+                    {
+                        "text": "href"
+                    },
+                    {
+                        "text": "navigate"
+                    },
+                    {
+                        "text": "to"
+                    },
+                    {
+                        "text": "route"
+                    }
+                ]
+            },
+            {
+                "question": "Can you define more than one router-view ?",
+                "answerIndex": 0,
+                "image": "https://media.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.gif",
+                "options": [
+                    {
+                        "text": "yes"
+                    },
+                    {
+                        "text": "no"
+                    }
+                ]
+            },
+            {
+                "question": "How can you pass an id parameter in route?",
+                "answerIndex": 0,
+                "image":"https://media.giphy.com/media/3o7TKSha51ATTx9KzC/giphy.gif",
+                "options": [
+                    {
+                        "text": "pass the id in the url: `app/items/itemId` and use `router.params.itemId`"
+                    },
+                    {
+                        "text": "pass a prop through router `props` attribute when setting a path."
+                    },
+                    {
+                        "text": "It is not possible to pass a parameter."
+                    }
+                ]
+            }
+        ]
+    },
+    "swimmPatch": {
+        "src/router/index.js": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/router/index.js b/src/router/index.js\nindex b3321ef..b3321ef 100644\n--- a/src/router/index.js\n+++ b/src/router/index.js",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "In this step we set for each url path the corresponding component"
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -12,11 +12,6 @@",
+                        " }",
+                        " ",
+                        " const routes = [",
+                        "-  {",
+                        "-    path: '/',",
+                        "-    name: 'Home',",
+                        "-    component: Home,",
+                        "-  },",
+                        "   {",
+                        "     path: '/about',",
+                        "     name: 'About',"
+                    ]
+                }
+            ]
+        },
+        "src/App.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/App.vue b/src/App.vue\nindex 2ed9263..2ed9263 100644\n--- a/src/App.vue\n+++ b/src/App.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "router view is where the component will be render",
+                            "You can define more than 1 router-view"
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -4,7 +4,6 @@",
+                        "     <navdrawer :menu-items=\"menuItems\" />",
+                        "     <v-main>",
+                        "       <v-container fluid>",
+                        "-        <router-view @updateItems=\"updateItems\"></router-view>",
+                        "       </v-container>",
+                        "     </v-main>",
+                        " "
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "In this step we define the router that is displayed in the menu"
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -41,7 +41,6 @@",
+                        "     },",
+                        "     setMenuItems() {",
+                        "       this.menuItems = [];",
+                        "-      this.menuItems.push({ title: \"Home\", icon: \"mdi-home\", route: \"/\" });",
+                        "       this.menuItems.push(",
+                        "         ...this.items.map((rootItem) => {",
+                        "           return {"
+                    ]
+                }
+            ]
+        },
+        "src/components/Navdrawer.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/components/Navdrawer.vue b/src/components/Navdrawer.vue\nindex 697ef59..697ef59 100644\n--- a/src/components/Navdrawer.vue\n+++ b/src/components/Navdrawer.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "In this step we setting the `to` attribute of the list - vuetify v-list perform as router-link"
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -10,7 +10,6 @@",
+                        "     <v-divider></v-divider>",
+                        " ",
+                        "     <v-list dense nav>",
+                        "-      <v-list-item link v-for=\"item in menuItems\" :key=\"item.title\" :to=\"item.route\">",
+                        "         <v-list-item-icon>",
+                        "           <v-icon>{{ item.icon }}</v-icon>",
+                        "         </v-list-item-icon>"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.3.0",
+    "file_version": "1.0.4",
+    "last_commit_sha_for_swimm_patch": "6972dc2f34fe490f992b5b3f163426d3e8d5720a"
+}

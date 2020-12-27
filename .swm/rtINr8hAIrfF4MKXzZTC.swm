@@ -1,0 +1,85 @@
+{
+    "id": "rtINr8hAIrfF4MKXzZTC",
+    "name": "Vue assessment ",
+    "dod": "",
+    "description": "Take the quiz and get a quick assessment and unit recommendations. ",
+    "summary": "",
+    "hunksOrder": [
+        "src/main.js_0"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "walkthrough",
+    "quiz": {
+        "questions": [
+            {
+                "question": "What are templates",
+                "answerIndex": 0,
+                "image":"https://media.giphy.com/media/1iu8uG2cjYFZS6wTxv/giphy.gif",
+                "options": [
+                    {
+                        "text": "HTML"
+                    },
+                    {
+                        "text": "Way to create component faster"
+                    },
+                    {
+                        "text": "The data structure "
+                    }
+                ],
+                "failText": "You should do the template unit",
+                "successText": "Great! You should try our hands on unit about templates"
+            },
+            {
+                "question": "When do you use prop",
+                "answerIndex": 2,
+                "options": [
+                    {
+                        "text": "pass parameters through the urI"
+                    },
+                    {
+                        "text": "pass data to parent component"
+                    },
+                    {
+                        "text": "pass data to child component"
+                    }
+                ],
+                "successText": "good job! you should try the advance unit about passing props with vue router",
+                "failText": "You should checkout the props tutorial"
+            }
+        ]
+    },
+    "swimmPatch": {
+        "src/main.js": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/main.js b/src/main.js\nindex 6b9c034..6b9c034 100644\n--- a/src/main.js\n+++ b/src/main.js",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -1,14 +1,0 @@",
+                        "-import Vue from 'vue'",
+                        "-import App from './App.vue'",
+                        "-import router from './router'",
+                        "-import store from './store'",
+                        "-import vuetify from './plugins/vuetify';",
+                        "-",
+                        "-Vue.config.productionTip = false",
+                        "-",
+                        "-new Vue({",
+                        "-  router,",
+                        "-  store,",
+                        "-  vuetify,",
+                        "-  render: h => h(App)",
+                        "-}).$mount('#app')"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.3.0",
+    "file_version": "1.0.4",
+    "last_commit_sha_for_swimm_patch": "6972dc2f34fe490f992b5b3f163426d3e8d5720a"
+}

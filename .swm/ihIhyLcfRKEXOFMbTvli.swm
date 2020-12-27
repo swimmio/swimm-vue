@@ -1,0 +1,111 @@
+{
+    "id": "ihIhyLcfRKEXOFMbTvli",
+    "name": "dark mode",
+    "dod": "",
+    "description": "",
+    "summary": "",
+    "hunksOrder": [
+        "src/components/DarkmodeSwitch.vue_0",
+        "src/App.vue_0",
+        "src/App.vue_1",
+        "src/App.vue_2"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "walkthrough",
+    "quiz": {
+        "questions": []
+    },
+    "swimmPatch": {
+        "src/components/DarkmodeSwitch.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/components/DarkmodeSwitch.vue b/src/components/DarkmodeSwitch.vue\nindex b799262..b799262 100644\n--- a/src/components/DarkmodeSwitch.vue\n+++ b/src/components/DarkmodeSwitch.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -1,22 +1,0 @@",
+                        "-<template>",
+                        "-<span>",
+                        "-  <v-switch v-model=\"$vuetify.theme.dark\" :label=\"text\" @change=\"toggleText\"></v-switch>",
+                        "-</span>",
+                        "-</template>",
+                        "-",
+                        "-<script>",
+                        "-export default {",
+                        "-  name: \"DarkmodeSwitch\",",
+                        "-  data() {",
+                        "-    return { text: 'day' };",
+                        "-  },",
+                        "-  created(){",
+                        "-      this.toggleText();",
+                        "-  },",
+                        "-  methods: {",
+                        "-      toggleText() {",
+                        "-          this.text = this.$vuetify.theme.dark ? 'night' : 'day';",
+                        "-      }",
+                        "-  }",
+                        "-};",
+                        "-</script>"
+                    ]
+                }
+            ]
+        },
+        "src/App.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/App.vue b/src/App.vue\nindex 2ed9263..2ed9263 100644\n--- a/src/App.vue\n+++ b/src/App.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -17,7 +17,6 @@",
+                        " <script>",
+                        " import Navdrawer from \"./components/Navdrawer.vue\";",
+                        " import { mapState } from \"vuex\";",
+                        "-import DarkmodeSwitch from './components/DarkmodeSwitch.vue';",
+                        " ",
+                        " export default {",
+                        "   name: \"App\","
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -23,7 +23,6 @@",
+                        "   name: \"App\",",
+                        "   components: {",
+                        "     Navdrawer,",
+                        "-    DarkmodeSwitch",
+                        "   },",
+                        " ",
+                        "   data: () => ({"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -9,7 +9,6 @@",
+                        "     </v-main>",
+                        " ",
+                        "     <v-footer app>",
+                        "-      <darkmode-switch />",
+                        "     </v-footer>",
+                        "   </v-app>",
+                        " </template>"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.3.0",
+    "file_version": "1.0.4",
+    "last_commit_sha_for_swimm_patch": "6972dc2f34fe490f992b5b3f163426d3e8d5720a"
+}
