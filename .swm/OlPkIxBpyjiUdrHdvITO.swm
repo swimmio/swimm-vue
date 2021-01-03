@@ -2,7 +2,7 @@
     "id": "OlPkIxBpyjiUdrHdvITO",
     "name": "<templates>",
     "dod": "",
-    "description": "The template tag contains the component’s HTML markup.\nIt uses HTML-based syntax and allow us to declaritive bind the rendered DOM to the Vue instance data.\nIn this unit we will go through the syntax and directive that goes inside the template.\n\nNote that the tags that start with `v-` are vuetify components, you can use regular HTML tags as well.",
+    "description": "The template tag contains the component’s HTML markup.\nIt uses HTML-based syntax and allows us to declaritively bind the rendered DOM to the Vue instance data.\nIn this Unit we will go through the syntax and directive that goes inside the template.\n\nNote that the tags that start with `v-` are vuetify components, you can use regular HTML tags as well.",
     "summary": "",
     "hunksOrder": [
         "src/views/About.vue_0",
@@ -21,7 +21,7 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "Take a look at how we displaying the title with `{{ title }}`, this let Vue know that the text we want to show is the value of the variable `title`. It is called  in-template expression ."
+                            "Take a look at how we display the title with `{{ title }}`. This lets Vue know that the text we want to show is the value of the variable `title`. It is called \"in-template expression\"."
                         ]
                     },
                     "hunkDiffLines": [
@@ -39,8 +39,8 @@
                     "swimmHunkMetadata": {
                         "hunkComments": [
                             "`v-for` is used for list rendering (loops).",
-                            "Here we rending the menu of the app, and each item will be shown with the icon that is set on the object.",
-                            "When using `v-for`,  Vue will require to set a key, an unique identifier for each item"
+                            "Here we render the menu of the app, and each item will be shown with the icon that is set on the object.",
+                            "When using `v-for`,  Vue will require to set a key, which is a unique identifier for each item."
                         ]
                     },
                     "hunkDiffLines": [
@@ -67,13 +67,13 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "The v-if is used for conditional rendering, The block will be render only if the directive's expression is true.",
-                            "You can use `v-else` directive to indicate what will be shown if the expression is false",
+                            "The `v-if` is used for conditional rendering. This means that the block will be rendered only if the directive's expression is true.",
+                            "You can use the `v-else` directive to indicate what will be shown if the expression is false",
                             "The `v-else` must follow immediately after the `v-if` or the `v-else-if`.",
-                            "In this case if we in read only mode we render the text as is instead of an editable text field.",
-                            "The `@click` also can be written as `v-on:click` and it let  us to listen to DOM event and trigger JS - In this case we are listening to click event of the trash icon that is append to the text field.",
-                            "`v-model` is used for 2 way binding, Here we binding the value of the item name, whenever the value is changed from the text field, the parent component `TreeView` data will be updated.",
-                            "`v-bind` or `:` is used to bind HTML attribute (like class or style) to JS expressions. it is also used to pass props to child component. In this example Vuetify text field can recive a prop of icon, and we passing the trash icon. "
+                            "In this case, if we in are read-only mode, we render the text as-is instead of an editable text field.",
+                            "The `@click` also can be written as `v-on:click` and it allows us to listen to DOM event and trigger JS - In this case we are listening to click event of the trash icon that is appended to the text field.",
+                            "`v-model` is used for 2-way binding. Here we bind the value of the item's name, whenever the value is changed from the text field, the parent component `TreeView` data will be updated.",
+                            "`v-bind` or `:` is used to bind an HTML attribute (like class or style) to JS expressions. It is also used to pass props to child components. In this example, the Vuetify text field can receive a prop of and icon, and we pass it the trash icon. "
                         ]
                     },
                     "hunkDiffLines": [
@@ -107,7 +107,7 @@
                         "hunkComments": [
                             "Inside the `<template></template>` tags you will structure the HTML and the component. ",
                             "Inside the tags there should be only 1 root element. Need another one? Wrap them with a `<div>`.",
-                            "`<hello-world />` is a component we created and we use it inside the template of the app 'About' page."
+                            "`<hello-world />` is a component we created and we use it inside the template of the app's `About` page."
                         ]
                     },
                     "hunkDiffLines": [
