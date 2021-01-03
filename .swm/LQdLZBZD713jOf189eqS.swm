@@ -2,7 +2,7 @@
     "id": "LQdLZBZD713jOf189eqS",
     "name": "<script>",
     "dod": "",
-    "description": "The script tag contains the component’s JavaScript code. Within this we can do things like import other components, or other packages we need for our component to work and handle the data and logic of the component.",
+    "description": "The `<script>` tag contains the component’s JavaScript code. Within this tag, we can do things like import other components, or other packages we need for our component to work. We can also handle the data and logic of the component.",
     "summary": "",
     "hunksOrder": [
         "src/views/About.vue_0",
@@ -26,7 +26,7 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "Inside the `<script></script>` tags is where you write the javascript for the component"
+                            "We write the javascript code for our components inside the `<script></script>` tags."
                         ]
                     },
                     "hunkDiffLines": [
@@ -79,7 +79,7 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "The export object is what allows you to define and export this named component and reuse it across your application.",
+                            "The `export` object allows you to define and export this named component, as well as reuse it across your application.",
                             "You can give a name to the component, it is useful for recursive components, debugging (dev tools) and when using `is` attribute in a template."
                         ]
                     },
@@ -97,9 +97,9 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "`data` is a function that returns an object with data that can used in the template and passed to child components (as props) and inside the script with the `this` keyword.",
-                            "Note that data is reactive, the DOM will be rendered again when it changes.",
-                            "This data is private, and only for the component itself to use. Other components do not have access to it."
+                            "`data` is a function that returns an object with data that can be used in the template and passed to child components (as props), and inside the script with the `this` keyword.",
+                            "Note that `data` is reactive, that is, the DOM will be rendered again when it changes.",
+                            "`data` is private, and only for the component itself to use. Other components do not have access to it."
                         ]
                     },
                     "hunkDiffLines": [
@@ -139,7 +139,7 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "properties are the way that we pass data from a parent component down to it's child components (using the bind directive)."
+                            "Properties are the way that we pass data from a parent component down to its child components (using the `bind` directive)."
                         ]
                     },
                     "hunkDiffLines": [
@@ -158,8 +158,8 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "`computed`  are functions that returns values that can be used in the template.",
-                            "We will use computed when the in-template expression is to complex."
+                            "`computed`  are functions that return values that can be used in the template.",
+                            "We use `computed` when the in-template expression is too complex."
                         ]
                     },
                     "hunkDiffLines": [
@@ -193,7 +193,7 @@
                 {
                     "swimmHunkMetadata": {
                         "hunkComments": [
-                            "Created is one of the lifecycle hook, it will be called once the component is created."
+                            "Created is one of the lifecycle's hooks, it will be called once the component is created."
                         ]
                     },
                     "hunkDiffLines": [
