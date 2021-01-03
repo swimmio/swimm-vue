@@ -1,4 +1,4 @@
-Before we start diving, lets setup tha app for development.
+Before we start diving into the code, let's setup our development environment.
 
 ## Project setup
 ```
@@ -9,7 +9,7 @@ or
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compilations and hot-reloads for development
 ```
 yarn serve
 ```
