@@ -1,0 +1,256 @@
+{
+    "id": "jpaJ4BnaHaqsakkplx6q",
+    "name": "Unit SHa",
+    "dod": "",
+    "description": "Work with store",
+    "summary": "",
+    "hunksOrder": [
+        "src/App.vue_0",
+        "src/App.vue_1",
+        "src/components/TreeView.vue_0",
+        "src/components/TreeView.vue_1",
+        "src/components/TreeView.vue_2",
+        "src/store/index.js_0",
+        "src/store/index.js_1",
+        "src/store/index.js_2",
+        "src/store/index.js_3"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "walkthrough",
+    "swimmPatch": {
+        "src/App.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/App.vue b/src/App.vue\nindex 01f9c58..467267f 100644\n--- a/src/App.vue\n+++ b/src/App.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -30,7 +30,6 @@",
+                        "     menuItems: [],",
+                        "   }),",
+                        "   computed: {",
+                        "-    ...mapState([\"items\", \"nextId\"]),",
+                        "   },",
+                        "   mounted() {",
+                        "     this.setMenuItems();"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -36,9 +36,6 @@",
+                        "     this.setMenuItems();",
+                        "   },",
+                        "   methods: {",
+                        "-    updateItems() {",
+                        "-      this.setMenuItems();",
+                        "-    },",
+                        "     setMenuItems() {",
+                        "       this.menuItems = [];",
+                        "       this.menuItems.push({ title: \"Home\", icon: \"mdi-home\", route: \"/\" });"
+                    ]
+                }
+            ]
+        },
+        "src/components/TreeView.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/components/TreeView.vue b/src/components/TreeView.vue\nindex daa8468..a625f58 100644\n--- a/src/components/TreeView.vue\n+++ b/src/components/TreeView.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -34,20 +34,26 @@",
+                        " </template>",
+                        " ",
+                        " <script>",
+                        "-import { mapActions, mapState } from \"vuex\";",
+                        "+//import { mapActions, mapState } from \"vuex\";",
+                        " ",
+                        " export default {",
+                        "   name: \"TreeView\",",
+                        "   props: {",
+                        "     items: Array,",
+                        "-    title: String,",
+                        "-    readOnly: Boolean,",
+                        "   },",
+                        "-  computed: {",
+                        "+  data() {",
+                        "-    ...mapState([\"nextId\"]),",
+                        "+    return { nextId: 0 };",
+                        "+  },",
+                        "+  mounted() {",
+                        "+    if (localStorage.getItem(\"nextId\")) {",
+                        "+      try {",
+                        "+        this.nextId = Number(localStorage.getItem(\"nextId\"));",
+                        "+      } catch (e) {",
+                        "+        localStorage.removeItem(\"nextId\");",
+                        "+      }",
+                        "+    }",
+                        "   },",
+                        "   methods: {",
+                        "-    ...mapActions([\"saveNextIdToLocalStorage\"]),",
+                        "     deleteItem(id, items = null, found = false) {",
+                        "       if (!found) {",
+                        "         if (!items) {"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -69,16 +75,11 @@",
+                        "     addChild(item) {",
+                        "       if (!item.children) {",
+                        "         this.$set(item, \"children\", []);",
+                        "       }",
+                        " ",
+                        "       const name = \"\";",
+                        "       const id = this.nextId;",
+                        " ",
+                        "-      item.children.push({",
+                        "-        id,",
+                        "-        name,",
+                        "-      });",
+                        "-      this.saveNextIdToLocalStorage(id + 1);",
+                        "       this.updateItems();",
+                        "     },",
+                        "     updateItems() {"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -96,7 +97,8 @@",
+                        "         id: this.nextId,",
+                        "         name: \"\",",
+                        "       });",
+                        "-      this.saveNextIdToLocalStorage(this.nextId + 1);",
+                        "+      this.nextId+=1;",
+                        "+      localStorage.setItem(\"nextId\", this.nextId);",
+                        "       this.updateItems();",
+                        "     },",
+                        "   },"
+                    ]
+                }
+            ]
+        },
+        "src/store/index.js": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/store/index.js b/src/store/index.js\nindex 543b269..2afe0b6 100644\n--- a/src/store/index.js\n+++ b/src/store/index.js",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -10,10 +10,6 @@",
+                        " ",
+                        "   },",
+                        "   mutations: {",
+                        "-    UPDATE_ITEMS(state, items) {",
+                        "-      state.items = [];",
+                        "-      state.items.push(...items);",
+                        "-    },",
+                        "     UPDATE_NEXTID(state, nextId) {",
+                        "       state.nextId = nextId;",
+                        "     },"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -20,27 +16,6 @@",
+                        "   },",
+                        "   actions: {",
+                        "     updateStore({ commit }) {",
+                        "-      if (localStorage.getItem(\"items\")) {",
+                        "-        try {",
+                        "-          const itemsFromStorage = JSON.parse(localStorage.getItem(\"items\"));",
+                        "-          commit('UPDATE_ITEMS', itemsFromStorage);",
+                        "-",
+                        "-        } catch (e) {",
+                        "-          localStorage.removeItem(\"items\");",
+                        "-        }",
+                        "-      }",
+                        "-",
+                        "-      if (localStorage.getItem(\"nextID\")) {",
+                        "-        try {",
+                        "-          const nextID = JSON.parse(localStorage.getItem(\"nextID\"));",
+                        "-          commit('UPDATE_NEXTID', nextID);",
+                        "-",
+                        "-        } catch (e) {",
+                        "-          localStorage.removeItem(\"nextID\");",
+                        "-        }",
+                        "-      }",
+                        "-    },",
+                        "-    updateItems({ commit }) {",
+                        "       if (localStorage.getItem(\"items\")) {",
+                        "         try {",
+                        "           const items = JSON.parse(localStorage.getItem(\"items\"));"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -50,8 +25,7 @@",
+                        "           localStorage.removeItem(\"items\");",
+                        "         }",
+                        "       }",
+                        "-    },",
+                        "+",
+                        "-    updateNextID({ commit }) {",
+                        "       if (localStorage.getItem(\"nextID\")) {",
+                        "         try {",
+                        "           const nextID = JSON.parse(localStorage.getItem(\"nextID\"));"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -65,20 +39,6 @@",
+                        "     saveItemsToLocalStorage({ commit }, items) {",
+                        "       const parsed = JSON.stringify(items);",
+                        "       localStorage.setItem(\"items\", parsed);",
+                        "-      commit('UPDATE_ITEMS', items);",
+                        "-    },",
+                        "-    saveNextIdToLocalStorage({ commit }, nextId) {",
+                        "-      localStorage.setItem(\"nextID\", nextId);",
+                        "-      commit('UPDATE_NEXTID', nextId);",
+                        "-    },",
+                        "-    saveToLocalStorage({ commit }, items, nextId) {",
+                        "-      const parsed = JSON.stringify(items);",
+                        "-      localStorage.setItem(\"items\", parsed);",
+                        "-      localStorage.setItem(\"nextID\", nextId);",
+                        "-      commit('UPDATE_ITEMS', items);",
+                        "-      commit('UPDATE_NEXTID', nextId);",
+                        "-    },",
+                        "-  },",
+                        "   getters: {",
+                        "     getItemsRoot: (state) => (state.items),",
+                        "     getNextId: (state) => state.nextId,"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.3.3-beta.1",
+    "file_version": "1.0.4",
+    "diff": "diff --git a/src/App.vue b/src/App.vue\nindex 01f9c58..467267f 100644\n--- a/src/App.vue\n+++ b/src/App.vue\n@@ -30,15 +30,11 @@\n     menuItems: [],\n   }),\n   computed: {\n-    ...mapState([\"items\", \"nextId\"]),\n   },\n   mounted() {\n     this.setMenuItems();\n   },\n   methods: {\n-    updateItems() {\n-      this.setMenuItems();\n-    },\n     setMenuItems() {\n       this.menuItems = [];\n       this.menuItems.push({ title: \"Home\", icon: \"mdi-home\", route: \"/\" });\ndiff --git a/src/components/TreeView.vue b/src/components/TreeView.vue\nindex daa8468..a625f58 100644\n--- a/src/components/TreeView.vue\n+++ b/src/components/TreeView.vue\n@@ -34,20 +34,26 @@\n </template>\n \n <script>\n-import { mapActions, mapState } from \"vuex\";\n+//import { mapActions, mapState } from \"vuex\";\n \n export default {\n   name: \"TreeView\",\n   props: {\n     items: Array,\n-    title: String,\n-    readOnly: Boolean,\n   },\n-  computed: {\n+  data() {\n-    ...mapState([\"nextId\"]),\n+    return { nextId: 0 };\n+  },\n+  mounted() {\n+    if (localStorage.getItem(\"nextId\")) {\n+      try {\n+        this.nextId = Number(localStorage.getItem(\"nextId\"));\n+      } catch (e) {\n+        localStorage.removeItem(\"nextId\");\n+      }\n+    }\n   },\n   methods: {\n-    ...mapActions([\"saveNextIdToLocalStorage\"]),\n     deleteItem(id, items = null, found = false) {\n       if (!found) {\n         if (!items) {\n@@ -69,16 +75,11 @@\n     addChild(item) {\n       if (!item.children) {\n         this.$set(item, \"children\", []);\n       }\n \n       const name = \"\";\n       const id = this.nextId;\n \n-      item.children.push({\n-        id,\n-        name,\n-      });\n-      this.saveNextIdToLocalStorage(id + 1);\n       this.updateItems();\n     },\n     updateItems() {\n@@ -96,7 +97,8 @@\n         id: this.nextId,\n         name: \"\",\n       });\n-      this.saveNextIdToLocalStorage(this.nextId + 1);\n+      this.nextId+=1;\n+      localStorage.setItem(\"nextId\", this.nextId);\n       this.updateItems();\n     },\n   },\ndiff --git a/src/store/index.js b/src/store/index.js\nindex 543b269..2afe0b6 100644\n--- a/src/store/index.js\n+++ b/src/store/index.js\n@@ -10,10 +10,6 @@\n \n   },\n   mutations: {\n-    UPDATE_ITEMS(state, items) {\n-      state.items = [];\n-      state.items.push(...items);\n-    },\n     UPDATE_NEXTID(state, nextId) {\n       state.nextId = nextId;\n     },\n@@ -20,27 +16,6 @@\n   },\n   actions: {\n     updateStore({ commit }) {\n-      if (localStorage.getItem(\"items\")) {\n-        try {\n-          const itemsFromStorage = JSON.parse(localStorage.getItem(\"items\"));\n-          commit('UPDATE_ITEMS', itemsFromStorage);\n-\n-        } catch (e) {\n-          localStorage.removeItem(\"items\");\n-        }\n-      }\n-\n-      if (localStorage.getItem(\"nextID\")) {\n-        try {\n-          const nextID = JSON.parse(localStorage.getItem(\"nextID\"));\n-          commit('UPDATE_NEXTID', nextID);\n-\n-        } catch (e) {\n-          localStorage.removeItem(\"nextID\");\n-        }\n-      }\n-    },\n-    updateItems({ commit }) {\n       if (localStorage.getItem(\"items\")) {\n         try {\n           const items = JSON.parse(localStorage.getItem(\"items\"));\n@@ -50,8 +25,7 @@\n           localStorage.removeItem(\"items\");\n         }\n       }\n-    },\n+\n-    updateNextID({ commit }) {\n       if (localStorage.getItem(\"nextID\")) {\n         try {\n           const nextID = JSON.parse(localStorage.getItem(\"nextID\"));\n@@ -65,20 +39,6 @@\n     saveItemsToLocalStorage({ commit }, items) {\n       const parsed = JSON.stringify(items);\n       localStorage.setItem(\"items\", parsed);\n-      commit('UPDATE_ITEMS', items);\n-    },\n-    saveNextIdToLocalStorage({ commit }, nextId) {\n-      localStorage.setItem(\"nextID\", nextId);\n-      commit('UPDATE_NEXTID', nextId);\n-    },\n-    saveToLocalStorage({ commit }, items, nextId) {\n-      const parsed = JSON.stringify(items);\n-      localStorage.setItem(\"items\", parsed);\n-      localStorage.setItem(\"nextID\", nextId);\n-      commit('UPDATE_ITEMS', items);\n-      commit('UPDATE_NEXTID', nextId);\n-    },\n-  },\n   getters: {\n     getItemsRoot: (state) => (state.items),\n     getNextId: (state) => state.nextId,\n",
+    "last_commit_sha_for_swimm_patch": "182ad74118ee1d8a6ec7fbacda99acedf906f613"
+}
