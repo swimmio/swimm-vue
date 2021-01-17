@@ -1,0 +1,43 @@
+{
+    "id": "9ykeRvQTCrKrNf3SIkNC",
+    "name": "test",
+    "dod": "",
+    "description": "",
+    "summary": "",
+    "hunksOrder": [
+        "src/main.js_0"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "walkthrough",
+    "swimmPatch": {
+        "src/main.js": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/main.js b/src/main.js\nindex 6b9c034..6b9c034 100644\n--- a/src/main.js\n+++ b/src/main.js",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -5,10 +5,3 @@",
+                        " import vuetify from './plugins/vuetify';\r",
+                        " \r",
+                        " Vue.config.productionTip = false\r",
+                        "-\r",
+                        "-new Vue({\r",
+                        "-  router,\r",
+                        "-  store,\r",
+                        "-  vuetify,\r",
+                        "-  render: h => h(App)\r",
+                        "-}).$mount('#app')"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.3.4-beta.1",
+    "file_version": "1.0.4",
+    "diff": "diff --git a/src/main.js b/src/main.js\nindex 6b9c034..6b9c034 100644\n--- a/src/main.js\n+++ b/src/main.js\n@@ -5,10 +5,3 @@\n import vuetify from './plugins/vuetify';\r\n \r\n Vue.config.productionTip = false\r\n-\r\n-new Vue({\r\n-  router,\r\n-  store,\r\n-  vuetify,\r\n-  render: h => h(App)\r\n-}).$mount('#app')\n",
+    "last_commit_sha_for_swimm_patch": "634c62624f3d8cfee626c92e8238599666711ee1"
+}
