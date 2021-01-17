@@ -1,0 +1,69 @@
+{
+    "id": "R3peSP4U4QqDEcZvJ29f",
+    "name": "Snippet studio",
+    "dod": "",
+    "description": "hi",
+    "summary": "",
+    "hunksOrder": [
+        "src/router/index.js_0",
+        "src/main.js_0"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "walkthrough",
+    "swimmPatch": {
+        "src/router/index.js": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/router/index.js b/src/router/index.js\nindex b3321ef..b3321ef 100644\n--- a/src/router/index.js\n+++ b/src/router/index.js",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -4,12 +4,6 @@",
+                        " import About from '../views/About';\r",
+                        " \r",
+                        " Vue.use(VueRouter)\r",
+                        "-\r",
+                        "-function dynamicPropsFn (route) {\r",
+                        "-  return {\r",
+                        "-    itemId:  parseInt(route.params.id)\r",
+                        "-  }\r",
+                        "-}\r",
+                        " \r",
+                        " const routes = [\r",
+                        "   {\r"
+                    ]
+                }
+            ]
+        },
+        "src/main.js": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/main.js b/src/main.js\nindex 6b9c034..6b9c034 100644\n--- a/src/main.js\n+++ b/src/main.js",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -6,9 +6,3 @@",
+                        " \r",
+                        " Vue.config.productionTip = false\r",
+                        " \r",
+                        "-new Vue({\r",
+                        "-  router,\r",
+                        "-  store,\r",
+                        "-  vuetify,\r",
+                        "-  render: h => h(App)\r",
+                        "-}).$mount('#app')"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.3.4-beta.1",
+    "file_version": "1.0.4",
+    "diff": "diff --git a/src/router/index.js b/src/router/index.js\nindex b3321ef..b3321ef 100644\n--- a/src/router/index.js\n+++ b/src/router/index.js\n@@ -4,12 +4,6 @@\n import About from '../views/About';\r\n \r\n Vue.use(VueRouter)\r\n-\r\n-function dynamicPropsFn (route) {\r\n-  return {\r\n-    itemId:  parseInt(route.params.id)\r\n-  }\r\n-}\r\n \r\n const routes = [\r\n   {\r\ndiff --git a/src/main.js b/src/main.js\nindex 6b9c034..6b9c034 100644\n--- a/src/main.js\n+++ b/src/main.js\n@@ -6,9 +6,3 @@\n \r\n Vue.config.productionTip = false\r\n \r\n-new Vue({\r\n-  router,\r\n-  store,\r\n-  vuetify,\r\n-  render: h => h(App)\r\n-}).$mount('#app')\n",
+    "last_commit_sha_for_swimm_patch": "7ca673ff6ea4fe4914b004a0ff5c13f94aa763ca"
+}
