@@ -24,21 +24,22 @@
                         "   <v-container>",
                         "     <v-row class=\"text-center\">",
                         "       <v-col cols=\"12\">",
-                        "-        <v-img",
-                        "-          :src=\"require('../assets/pexels-miles-hardacre-2404370.jpg')\"",
-                        "-          class=\"my-3\"",
-                        "-          contain",
-                        "-          height=\"600\"",
-                        "-        />",
+                        "-      </v-col>",
+                        "-",
+                        "-      <v-col class=\"mb-4\">",
+                        "-        <p class=\"subheading font-weight-regular custom-class\">",
+                        "-          This project been created in the purpose of knowlage transffer via",
+                        "-          swimm platform",
+                        "         </p>",
                         "       </v-col>",
-                        " ",
-                        "       <v-col class=\"mb-4\">"
+                        " "
                     ]
                 }
             ]
         }
     },
-    "app_version": "0.3.0",
+    "app_version": "0.3.4-beta.1",
     "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "6972dc2f34fe490f992b5b3f163426d3e8d5720a"
+    "diff": "diff --git a/src/components/HelloWorld.vue b/src/components/HelloWorld.vue\nindex ed4d5d1..ed4d5d1 100644\n--- a/src/components/HelloWorld.vue\n+++ b/src/components/HelloWorld.vue\n@@ -2,12 +2,6 @@\n   <v-container>\n     <v-row class=\"text-center\">\n       <v-col cols=\"12\">\n-      </v-col>\n-\n-      <v-col class=\"mb-4\">\n-        <p class=\"subheading font-weight-regular custom-class\">\n-          This project been created in the purpose of knowlage transffer via\n-          swimm platform\n         </p>\n       </v-col>\n \n",
+    "last_commit_sha_for_swimm_patch": "d666314d82cae021baaeea1588e9ebdc21a357db"
 }
