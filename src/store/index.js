@@ -34,6 +34,7 @@ export default new Vuex.Store({
         try {
           const nextID = JSON.parse(localStorage.getItem("nextID"));
           commit('UPDATE_NEXTID', nextID);
+          // comment
 
         } catch (e) {
           localStorage.removeItem("nextID");
@@ -45,6 +46,7 @@ export default new Vuex.Store({
         try {
           const items = JSON.parse(localStorage.getItem("items"));
           commit('UPDATE_ITEMS', items);
+          // comment
 
         } catch (e) {
           localStorage.removeItem("items");
@@ -52,13 +54,13 @@ export default new Vuex.Store({
       }
     },
     updateNextID({ commit }) {
-      if (localStorage.getItem("nextID")) {
+      if (localStorage.getItem("nextId")) {
         try {
-          const nextID = JSON.parse(localStorage.getItem("nextID"));
+          const nextID = JSON.parse(localStorage.getItem("nextId"));
           commit('UPDATE_NEXTID', nextID);
 
         } catch (e) {
-          localStorage.removeItem("nextID");
+          localStorage.removeItem("nextId");
         }
       }
     },
