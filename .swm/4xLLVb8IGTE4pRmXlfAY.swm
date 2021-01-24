@@ -99,15 +99,15 @@
                     },
                     "hunkDiffLines": [
                         "@@ -18,9 +18,6 @@",
-                        "         <v-list-item-content>",
-                        "           <v-list-item-title>{{ item.title }}</v-list-item-title>",
-                        "         </v-list-item-content>",
+                        "         <v-list-item-content>\r",
+                        "           <v-list-item-title>{{ item.title }}</v-list-item-title>\r",
+                        "         </v-list-item-content>\r",
                         "-      </v-list-item>",
                         "-    </v-list>",
                         "-  </v-navigation-drawer>",
-                        " </template>",
-                        " ",
-                        " <script>"
+                        " </template>\r",
+                        " \r",
+                        " <script>\r"
                     ]
                 }
             ]
@@ -121,7 +121,7 @@
                         "hunkComments": []
                     },
                     "hunkDiffLines": [
-                        "@@ -1,86 +0,0 @@",
+                        "@@ -1,88 +1,0 @@",
                         "-import Vue from 'vue'",
                         "-import Vuex from 'vuex'",
                         "-",
@@ -158,6 +158,7 @@
                         "-        try {",
                         "-          const nextID = JSON.parse(localStorage.getItem(\"nextID\"));",
                         "-          commit('UPDATE_NEXTID', nextID);",
+                        "-          // comment",
                         "-",
                         "-        } catch (e) {",
                         "-          localStorage.removeItem(\"nextID\");",
@@ -169,6 +170,7 @@
                         "-        try {",
                         "-          const items = JSON.parse(localStorage.getItem(\"items\"));",
                         "-          commit('UPDATE_ITEMS', items);",
+                        "-          // comment",
                         "-",
                         "-        } catch (e) {",
                         "-          localStorage.removeItem(\"items\");",
@@ -176,13 +178,13 @@
                         "-      }",
                         "-    },",
                         "-    updateNextID({ commit }) {",
-                        "-      if (localStorage.getItem(\"nextID\")) {",
+                        "-      if (localStorage.getItem(\"nextId\")) {",
                         "-        try {",
-                        "-          const nextID = JSON.parse(localStorage.getItem(\"nextID\"));",
+                        "-          const nextID = JSON.parse(localStorage.getItem(\"nextId\"));",
                         "-          commit('UPDATE_NEXTID', nextID);",
                         "-",
                         "-        } catch (e) {",
-                        "-          localStorage.removeItem(\"nextID\");",
+                        "-          localStorage.removeItem(\"nextId\");",
                         "-        }",
                         "-      }",
                         "-    },",
@@ -214,5 +216,6 @@
         }
     },
     "app_version": "0.3.5-0",
-    "file_version": "1.0.4"
+    "file_version": "1.0.4",
+    "last_commit_sha_for_swimm_patch": "b5d02b42c9013796743842b106e47fc79a6c74ce"
 }
