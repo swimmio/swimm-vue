@@ -1,0 +1,133 @@
+{
+    "id": "IdaeuxO0sgR0er9iqqXN",
+    "name": "sync from changes",
+    "dod": "In this unit you should task dod",
+    "description": "",
+    "summary": "",
+    "hunksOrder": [
+        "src/components/HelloWorld.vue_0",
+        "src/components/HelloWorld.vue_1",
+        "src/components/HelloWorld.vue_2",
+        "src/views/About.vue_0",
+        "src/views/About.vue_1"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "all",
+    "swimmPatch": {
+        "src/components/HelloWorld.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/components/HelloWorld.vue b/src/components/HelloWorld.vue\nindex ed4d5d1..2f8cc64 100644\n--- a/src/components/HelloWorld.vue\n+++ b/src/components/HelloWorld.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -2,19 +2,9 @@",
+                        "   <v-container>",
+                        "     <v-row class=\"text-center\">",
+                        "       <v-col cols=\"12\">",
+                        "-        <v-img",
+                        "-          :src=\"require('../assets/pexels-miles-hardacre-2404370.jpg')\"",
+                        "-          class=\"my-3\"",
+                        "-          contain",
+                        "-          height=\"600\"",
+                        "-        />",
+                        "       </v-col>",
+                        " ",
+                        "       <v-col class=\"mb-4\">",
+                        "-        <p class=\"subheading font-weight-regular custom-class\">",
+                        "-          This project been created in the purpose of knowlage transffer via",
+                        "-          swimm platform",
+                        "-        </p>",
+                        "       </v-col>",
+                        " ",
+                        "       <v-col class=\"mb-5\" cols=\"12\">"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -27,9 +17,9 @@",
+                        "             :href=\"link.href\"",
+                        "             class=\"subheading mx-3\"",
+                        "             target=\"_blank\"",
+                        "-          >",
+                        "+          ",
+                        "-            {{ link.text }}",
+                        "+    >",
+                        "-          </a>",
+                        "+                    </a>",
+                        "         </v-row>",
+                        "       </v-col>",
+                        "     </v-row>"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -45,6 +35,10 @@",
+                        "       {",
+                        "         text: \"Swimm.io\",",
+                        "         href: \"https://swimm.io/\",",
+                        "+      },",
+                        "+            {",
+                        "+        text: \"Swidelete thismm.io\",",
+                        "+        href: \"https://swimm.io/\",",
+                        "       },",
+                        "       {",
+                        "         text: \"github\","
+                    ]
+                }
+            ]
+        },
+        "src/views/About.vue": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/src/views/About.vue b/src/views/About.vue\nindex b6bc325..25a09b4 100644\n--- a/src/views/About.vue\n+++ b/src/views/About.vue",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -1,7 +1,6 @@",
+                        " <template>",
+                        "   <v-container>",
+                        "     <h1>This is an about page</h1>",
+                        "-    <h2>{{ aboutPage }}</h2>",
+                        "     <hello-world />",
+                        "   </v-container>",
+                        " </template>"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -12,12 +11,8 @@",
+                        " export default {",
+                        "   name: \"About\",",
+                        "   components: {",
+                        "-    HelloWorld,",
+                        "   },",
+                        "   computed: {",
+                        "-    aboutPage() {",
+                        "-      return `Today is ${(new Date).toString()}`;",
+                        "-    },",
+                        "   },",
+                        " };",
+                        " </script>"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.3.5-0",
+    "file_version": "1.0.4"
+}
