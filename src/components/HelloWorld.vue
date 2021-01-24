@@ -11,10 +11,6 @@
       </v-col>
 
       <v-col class="mb-4">
-        <p class="subheading font-weight-regular custom-class">
-          This project been created in the purpose of knowlage transffer via
-          swimm platform
-        </p>
       </v-col>
 
       <v-col class="mb-5" cols="12">
@@ -28,7 +24,10 @@
             class="subheading mx-3"
             target="_blank"
           >
-            {{ link.text }}
+          <div>
+            <span>hi</span>
+            {{ link.something }}
+          </div>
           </a>
         </v-row>
       </v-col>
