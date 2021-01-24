@@ -25,11 +25,10 @@
                         ]
                     },
                     "hunkDiffLines": [
-                        "@@ -3,9 +3,6 @@",
-                        " /dist\r",
+                        "@@ -4,8 +4,6 @@",
                         " \r",
                         " \r",
-                        "-# local env files\r",
+                        " # local env files\r",
                         "-.env.local\r",
                         "-.env.*.local\r",
                         " \r",
@@ -82,5 +81,5 @@
     },
     "app_version": "0.3.5-0",
     "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "f216fcb8b50dc5b35f128570179473d1184b29eb"
+    "last_commit_sha_for_swimm_patch": "30bb4a4497ea2906dd2d895da6cad02fe0debd6c"
 }
