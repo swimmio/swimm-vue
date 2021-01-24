@@ -1,0 +1,86 @@
+{
+    "id": "RsXOJS3TmTJO0ngadFWc",
+    "name": "Selected Snippet -walkthrough only",
+    "dod": "",
+    "description": "",
+    "summary": "",
+    "hunksOrder": [
+        ".gitignore_0",
+        ".gitignore_1",
+        ".gitignore_2"
+    ],
+    "tests": [],
+    "hints": [],
+    "play_mode": "walkthrough",
+    "swimmPatch": {
+        ".gitignore": {
+            "diffType": "MODIFIED",
+            "fileDiffHeader": "diff --git a/.gitignore b/.gitignore\nindex c5c77bb..c5c77bb 100644\n--- a/.gitignore\n+++ b/.gitignore",
+            "hunks": [
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "In this step comment 1",
+                            "In this step comment 2"
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -3,9 +3,6 @@",
+                        " /dist\r",
+                        " \r",
+                        " \r",
+                        "-# local env files\r",
+                        "-.env.local\r",
+                        "-.env.*.local\r",
+                        " \r",
+                        " # Log files\r",
+                        " npm-debug.log*\r"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": []
+                    },
+                    "hunkDiffLines": [
+                        "@@ -6,12 +6,6 @@",
+                        " # local env files\r",
+                        " .env.local\r",
+                        " .env.*.local\r",
+                        "-\r",
+                        "-# Log files\r",
+                        "-npm-debug.log*\r",
+                        "-yarn-debug.log*\r",
+                        "-yarn-error.log*\r",
+                        "-pnpm-debug.log*\r",
+                        " \r",
+                        " # Editor directories and files\r",
+                        " .idea\r"
+                    ]
+                },
+                {
+                    "swimmHunkMetadata": {
+                        "hunkComments": [
+                            "In this step commnrrkflre "
+                        ]
+                    },
+                    "hunkDiffLines": [
+                        "@@ -13,10 +13,3 @@",
+                        " yarn-error.log*\r",
+                        " pnpm-debug.log*\r",
+                        " \r",
+                        "-# Editor directories and files\r",
+                        "-.idea\r",
+                        "-.vscode\r",
+                        "-*.suo\r",
+                        "-*.ntvs*\r",
+                        "-*.njsproj\r",
+                        "-*.sln"
+                    ]
+                }
+            ]
+        }
+    },
+    "app_version": "0.3.5-0",
+    "file_version": "1.0.4",
+    "last_commit_sha_for_swimm_patch": "f216fcb8b50dc5b35f128570179473d1184b29eb"
+}
