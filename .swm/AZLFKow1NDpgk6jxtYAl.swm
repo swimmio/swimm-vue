@@ -6,8 +6,8 @@
     "summary": "",
     "hunksOrder": [
         "src/App.vue_1",
-        "src/App.vue_0",
         "src/router/index.js_0",
+        "src/App.vue_0",
         "src/router/index.js_1",
         "src/views/Home.vue_0"
     ],
@@ -148,5 +148,5 @@
     },
     "app_version": "0.3.5-0",
     "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "db3e60dfa48942cb0808080e29b70bff68620186"
+    "last_commit_sha_for_swimm_patch": "30bb4a4497ea2906dd2d895da6cad02fe0debd6c"
 }
