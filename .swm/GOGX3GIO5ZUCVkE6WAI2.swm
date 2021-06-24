@@ -1,0 +1,16 @@
+{
+    "id": "GOGX3GIO5ZUCVkE6WAI2",
+    "name": "Application overview",
+    "content": [
+        {
+            "type": "text",
+            "text": "In this Playlist, we will use the `Lists Pool` app that has been created for learning purposes. This app allows you to create lists (of lists).\n\nThe data is saved to the browser's [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) (so don't keep any important information as it will be lost).\n\nTo create this app, we used a UI framework called [Vuetify](https://vuetifyjs.com). Vuetify is an open source MIT project for building user interfaces for web and mobile applications. It provides us with many components with material design style ready to use (so we wouldn't need to css everything to make it look good).\n"
+        }
+    ],
+    "symbols": {},
+    "file_version": "2.0.1",
+    "meta": {
+        "app_version": "0.4.7-0",
+        "file_blobs": {}
+    }
+}
