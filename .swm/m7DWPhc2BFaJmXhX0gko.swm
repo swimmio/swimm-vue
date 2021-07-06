@@ -11,7 +11,7 @@
             "type": "snippet",
             "path": "package.json",
             "comments": [
-                "`package.json` includes a JSON object containing our project’s name, the npm packages installed in our project, the scripts used to run our project (e.g., npm run serve), and other app configuration."
+                "[[sym:./package.json(bcd441d0-2186-47f8-ac3e-fdeb6d57c30d)]] includes a JSON object containing our project’s name, the npm packages installed in our project, the scripts used to run our project (e.g., `npm run serve`), and other app configuration."
             ],
             "firstLineNumber": 1,
             "lines": [
@@ -56,8 +56,8 @@
             "type": "snippet",
             "path": "public/index.html",
             "comments": [
-                "`public/index.html` is where our VueJS app renders.",
-                "The JavaScript code targets the <div> with an \"app\" id and renders the App component (our application) there."
+                "[[sym:./public/index.html(54caaa9e-2964-471e-a4b2-cd8d2ab88ac9)]] is where our VueJS app renders.",
+                "The JavaScript code targets the [[sym-text:div(e2c40432-c7a8-4b64-ba5d-2c24b8c430f4)]] with an `\"app\"` id and renders the App component (our application) there."
             ],
             "firstLineNumber": 1,
             "lines": [
@@ -86,10 +86,10 @@
             "type": "snippet",
             "path": "src/main.js",
             "comments": [
-                "`src/main.js` is where our root Vue instance is declared and configured",
-                "We import Vue from the 'vue' npm package, which is located in our node_modules/ folder",
-                "We import a Vue component named App from ./App.vue . This is our root Vue component.",
-                "We declaring the Vue APP Within our new Vue({}) object, we passing the `vue-router` configuration, the `vuex` Store and the `vuetify` plugin, and the render for App. ans mounting it to the rendering target a `div` with \"app\" id."
+                "[[sym:./src/main.js(4f2568ae-3942-40e9-ae89-4ef4c4cfe3ab)]] is where our root Vue instance is declared and configured.",
+                "We import Vue from the 'vue' npm package, which is located in our `node_modules/` folder",
+                "We import a Vue component named App from [[sym:./src/App.vue(a9b3af46-d7c7-45ed-802d-1c19eba17ecf)]] . This is our root Vue component.",
+                "We're declaring the Vue app within our `new Vue({})` object, we're passing the `vue-router` configuration, the `vuex` Store and the `vuetify` plugin, and the render for App and mounting it to the rendering target a `div` with \"app\" id."
             ],
             "firstLineNumber": 1,
             "lines": [
@@ -110,10 +110,44 @@
             ]
         }
     ],
-    "symbols": {},
+    "symbols": {
+        "e2c40432-c7a8-4b64-ba5d-2c24b8c430f4": {
+            "symbol": "e2c40432-c7a8-4b64-ba5d-2c24b8c430f4",
+            "path": "public/index.html",
+            "text": "div",
+            "lineNumber": 16,
+            "lineData": "    <div id=\"app\"></div>",
+            "wordIndex": {
+                "start": 2,
+                "end": 2
+            },
+            "fileBlob": "bc5146586471e7374928fe4ad371074d9d1dcfeb",
+            "type": "generic_text"
+        },
+        "bcd441d0-2186-47f8-ac3e-fdeb6d57c30d": {
+            "type": "path",
+            "text": "package.json",
+            "path": "package.json"
+        },
+        "54caaa9e-2964-471e-a4b2-cd8d2ab88ac9": {
+            "type": "path",
+            "text": "public/index.html",
+            "path": "public/index.html"
+        },
+        "4f2568ae-3942-40e9-ae89-4ef4c4cfe3ab": {
+            "type": "path",
+            "text": "src/main.js",
+            "path": "src/main.js"
+        },
+        "a9b3af46-d7c7-45ed-802d-1c19eba17ecf": {
+            "type": "path",
+            "text": "src/App.vue",
+            "path": "src/App.vue"
+        }
+    },
     "file_version": "2.0.1",
     "meta": {
-        "app_version": "0.4.9-1",
+        "app_version": "0.5.0-0",
         "file_blobs": {
             "package.json": "bd6ee6126329af73cfca71a04e577161ce8a6b81",
             "public/index.html": "bc5146586471e7374928fe4ad371074d9d1dcfeb",
