@@ -53,7 +53,7 @@
             "type": "snippet",
             "path": "src/App.vue",
             "comments": [
-                "The property is passed to the child component with the `v-bind` directive."
+                "The property is passed to the child component with the `v-bind` directive (the short `:` directive, in this case)."
             ],
             "firstLineNumber": 1,
             "lines": [
@@ -120,7 +120,7 @@
     "symbols": {},
     "file_version": "2.0.3",
     "meta": {
-        "app_version": "0.5.4-0",
+        "app_version": "0.5.5-0",
         "file_blobs": {
             "src/components/Navdrawer.vue": "697ef59c6c163cc590cd60033dbd791aac9447a9",
             "src/App.vue": "2ed92635f68ca67b31bcc0e8c4c6a9b326ba79e2"
