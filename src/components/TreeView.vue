@@ -58,7 +58,7 @@ export default {
           if (child.id == id) {
             items.splice(index, 1);
             found = true;
-            this.updateItems();
+            this.updateItems(items);
           }
           if (child.children) {
             this.deleteItem(id, child.children);
@@ -81,8 +81,8 @@ export default {
       this.saveNextIdToLocalStorage(id + 1);
       this.updateItems();
     },
-    updateItems() {
-      this.$emit("updateItems", this.items);
+    updateItems(updatedItems = this.items) {
+      this.$emit("updateItems", updatedItems);
     },
     updateInput() {
       // triggered on input, should only update the local storage only when user finished typing (debouncing)
@@ -92,12 +92,13 @@ export default {
       }, 1000);
     },
     addEntry() {
-      this.items.push({
+      const updatedItems = this.items;
+      updatedItems.push({
         id: this.nextId,
         name: "",
       });
       this.saveNextIdToLocalStorage(this.nextId + 1);
-      this.updateItems();
+      this.updateItems(updatedItems);
     },
   },
 };
