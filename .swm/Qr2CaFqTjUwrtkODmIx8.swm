@@ -1,134 +1,129 @@
 {
     "id": "Qr2CaFqTjUwrtkODmIx8",
     "name": "Props",
-    "dod": "",
-    "description": "A prop is a property on a component.\nThis is where you define the data that the component should be expecting from its parent component.\nProps are a one-way-down binding between the child property and the parent one, when the parent property updates, it will flow down to the child, but not the other way around",
-    "summary": "For further read about Props checkout the offical [documentation](https://vuejs.org/v2/guide/components-props.html#Prop-Casing-camelCase-vs-kebab-case)",
-    "hunksOrder": [
-        "src/components/Navdrawer.vue_1",
-        "src/components/Navdrawer.vue_0",
-        "src/App.vue_0",
-        "src/App.vue_1"
-    ],
-    "tests": [],
-    "hints": [],
-    "play_mode": "walkthrough",
-    "swimmPatch": {
-        "src/App.vue": {
-            "diffType": "MODIFIED",
-            "fileDiffHeader": "diff --git a/src/App.vue b/src/App.vue\nindex 7af6887..4aa4770 100644\n--- a/src/App.vue\n+++ b/src/App.vue",
-            "hunks": [
-                {
-                    "swimmHunkMetadata": {
-                        "hunkComments": [
-                            "The property is passed to the child component with the `v-bind` directive."
-                        ]
-                    },
-                    "hunkDiffLines": [
-                        "@@ -1,7 +1,6 @@",
-                        " <template>",
-                        "   <!-- App.vue -->",
-                        "   <v-app>",
-                        "-    <navdrawer :menu-items=\"menuItems\" />",
-                        "     <v-main>",
-                        "       <v-container fluid>",
-                        "         <router-view @updateItems=\"updateItems\"></router-view>"
-                    ]
-                },
-                {
-                    "swimmHunkMetadata": {
-                        "hunkComments": [
-                            "In the app script the `menuItems` array is created and being set, its value change over time and being update on the child component `navdrawer` (and rendered to the DOM). "
-                        ]
-                    },
-                    "hunkDiffLines": [
-                        "@@ -26,36 +25,7 @@",
-                        "     DarkmodeSwitch",
-                        "   },",
-                        " ",
-                        "-  data: () => ({",
-                        "-    menuItems: [],",
-                        "-  }),",
-                        "   computed: {",
-                        "     ...mapState([\"items\", \"nextId\"]),",
-                        "   },",
-                        "-  mounted() {",
-                        "-    this.setMenuItems();",
-                        "-  },",
-                        "-  methods: {",
-                        "-    updateItems() {",
-                        "-      this.setMenuItems();",
-                        "-    },",
-                        "-    setMenuItems() {",
-                        "-      this.menuItems = [];",
-                        "-      this.menuItems.push({ title: \"Home\", icon: \"mdi-home\", route: \"/\" });",
-                        "-      this.menuItems.push(",
-                        "-        ...this.items.map((rootItem) => {",
-                        "-          return {",
-                        "-            title: rootItem.name,",
-                        "-            icon: \"mdi-format-list-bulleted\",",
-                        "-            route: `/${rootItem.id}`,",
-                        "-          };",
-                        "-        })",
-                        "-      );",
-                        "-      this.menuItems.push({",
-                        "-        title: \"About\",",
-                        "-        icon: \"mdi-help-box\",",
-                        "-        route: \"/about\",",
-                        "-      });",
-                        "-    },",
-                        "-  },",
-                        " };"
-                    ]
-                }
+    "task": {
+        "dod": "",
+        "tests": [],
+        "hints": []
+    },
+    "content": [
+        {
+            "type": "text",
+            "text": "A prop is a property on a component.\nThis is where you define the data that the component should be expecting from its parent component.\nProps are a one-way-down binding between the child property and the parent one, when the parent property updates, it will flow down to the child, but not the other way around"
+        },
+        {
+            "type": "snippet",
+            "path": "src/components/Navdrawer.vue",
+            "comments": [
+                "Specifying the value type of the prop helps with validation. You can also add specify whether the prop is required or not; or add a default value. For example: `props: { type: String, required: true },`"
+            ],
+            "firstLineNumber": 26,
+            "lines": [
+                " <script>",
+                " export default {",
+                "   name: \"Navdrawer\",",
+                "*  props: {",
+                "+",
+                "*    menuItems: Array",
+                "*  },",
+                "   data() {",
+                "     return {",
+                "       title: \"Lists Pool\","
             ]
         },
-        "src/components/Navdrawer.vue": {
-            "diffType": "MODIFIED",
-            "fileDiffHeader": "diff --git a/src/components/Navdrawer.vue b/src/components/Navdrawer.vue\nindex 697ef59..332db40 100644\n--- a/src/components/Navdrawer.vue\n+++ b/src/components/Navdrawer.vue",
-            "hunks": [
-                {
-                    "swimmHunkMetadata": {
-                        "hunkComments": [
-                            "Every time the parent component is updated, all props in the child component will be refreshed with the latest value. This means you should not attempt to mutate a prop inside a child component. If you do, Vue will warn you in the console."
-                        ]
-                    },
-                    "hunkDiffLines": [
-                        "@@ -10,7 +10,7 @@",
-                        "     <v-divider></v-divider>",
-                        " ",
-                        "     <v-list dense nav>",
-                        "-      <v-list-item link v-for=\"item in menuItems\" :key=\"item.title\" :to=\"item.route\">",
-                        "+",
-                        "         <v-list-item-icon>",
-                        "           <v-icon>{{ item.icon }}</v-icon>",
-                        "         </v-list-item-icon>"
-                    ]
-                },
-                {
-                    "swimmHunkMetadata": {
-                        "hunkComments": [
-                            "Add the type of the prop help with validation. You can also add if the props is required or add a default `propC: {       type: String,       required: true     },`"
-                        ]
-                    },
-                    "hunkDiffLines": [
-                        "@@ -26,9 +26,7 @@",
-                        " <script>",
-                        " export default {",
-                        "   name: \"Navdrawer\",",
-                        "-  props: {",
-                        "+",
-                        "-    menuItems: Array",
-                        "-  },",
-                        "   data() {",
-                        "     return {",
-                        "       title: \"Lists Pool\","
-                    ]
-                }
+        {
+            "type": "snippet",
+            "path": "src/components/Navdrawer.vue",
+            "comments": [
+                "Every time the parent component is updated, all props in the child component will be refreshed with the latest value. This means you should not attempt to mutate a prop inside a child component. If you do, Vue will warn you in the console."
+            ],
+            "firstLineNumber": 10,
+            "lines": [
+                "     <v-divider></v-divider>",
+                " ",
+                "     <v-list dense nav>",
+                "*      <v-list-item link v-for=\"item in menuItems\" :key=\"item.title\" :to=\"item.route\">",
+                "+",
+                "         <v-list-item-icon>",
+                "           <v-icon>{{ item.icon }}</v-icon>",
+                "         </v-list-item-icon>"
             ]
+        },
+        {
+            "type": "snippet",
+            "path": "src/App.vue",
+            "comments": [
+                "The property is passed to the child component with the `v-bind` directive (the short `:` directive, in this case)."
+            ],
+            "firstLineNumber": 1,
+            "lines": [
+                " <template>",
+                "   <!-- App.vue -->",
+                "   <v-app>",
+                "*    <navdrawer :menu-items=\"menuItems\" />",
+                "     <v-main>",
+                "       <v-container fluid>",
+                "         <router-view @updateItems=\"updateItems\"></router-view>"
+            ]
+        },
+        {
+            "type": "snippet",
+            "path": "src/App.vue",
+            "comments": [
+                "In the app script the `menuItems` array is created and being set, its value change over time and being update on the child component `navdrawer` (and rendered to the DOM). "
+            ],
+            "firstLineNumber": 26,
+            "lines": [
+                "     DarkmodeSwitch",
+                "   },",
+                " ",
+                "*  data: () => ({",
+                "*    menuItems: [],",
+                "*  }),",
+                "   computed: {",
+                "     ...mapState([\"items\", \"nextId\"]),",
+                "   },",
+                "*  mounted() {",
+                "*    this.setMenuItems();",
+                "*  },",
+                "*  methods: {",
+                "*    updateItems() {",
+                "*      this.setMenuItems();",
+                "*    },",
+                "*    setMenuItems() {",
+                "*      this.menuItems = [];",
+                "*      this.menuItems.push({ title: \"Home\", icon: \"mdi-home\", route: \"/\" });",
+                "*      this.menuItems.push(",
+                "*        ...this.items.map((rootItem) => {",
+                "*          return {",
+                "*            title: rootItem.name,",
+                "*            icon: \"mdi-format-list-bulleted\",",
+                "*            route: `/${rootItem.id}`,",
+                "*          };",
+                "*        })",
+                "*      );",
+                "*      this.menuItems.push({",
+                "*        title: \"About\",",
+                "*        icon: \"mdi-help-box\",",
+                "*        route: \"/about\",",
+                "*      });",
+                "*    },",
+                "*  },",
+                " };"
+            ]
+        },
+        {
+            "type": "text",
+            "text": "For further read about Props checkout the offical [documentation](https://vuejs.org/v2/guide/components-props.html#Prop-Casing-camelCase-vs-kebab-case)"
         }
-    },
-    "app_version": "0.2.9",
-    "file_version": "1.0.4",
-    "last_commit_sha_for_swimm_patch": "44512e6ebac005a245e71908ec1b3e9b3a948803"
+    ],
+    "symbols": {},
+    "file_version": "2.0.3",
+    "meta": {
+        "app_version": "0.5.5-0",
+        "file_blobs": {
+            "src/components/Navdrawer.vue": "697ef59c6c163cc590cd60033dbd791aac9447a9",
+            "src/App.vue": "2ed92635f68ca67b31bcc0e8c4c6a9b326ba79e2"
+        }
+    }
 }
