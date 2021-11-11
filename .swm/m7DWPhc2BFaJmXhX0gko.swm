@@ -42,7 +42,7 @@
                 "*    \"eslint-plugin-vue\": \"^7.11.1\",",
                 "*    \"lint-staged\": \"^11.0.0\",",
                 "*    \"sass\": \"^1.19.0\",",
-                "*    \"sass-loader\": \"^12.1.0\",",
+                "*    \"sass-loader\": \"^8.0.0\",",
                 "*    \"vue-cli-plugin-vuetify\": \"~2.4.1\",",
                 "*    \"vue-template-compiler\": \"^2.6.11\",",
                 "*    \"vuetify-loader\": \"^1.3.0\"",
@@ -145,11 +145,11 @@
             "path": "src/App.vue"
         }
     },
-    "file_version": "2.0.1",
+    "file_version": "2.0.3",
     "meta": {
-        "app_version": "0.5.0-0",
+        "app_version": "0.6.5-4",
         "file_blobs": {
-            "package.json": "bd6ee6126329af73cfca71a04e577161ce8a6b81",
+            "package.json": "055295f1647ab2ffd7213bc973aaf94f1f6b800b",
             "public/index.html": "bc5146586471e7374928fe4ad371074d9d1dcfeb",
             "src/main.js": "6b9c0345f34d69060df854a7356f26622c9690be"
         }
