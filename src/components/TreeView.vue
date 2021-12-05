@@ -92,6 +92,8 @@ export default {
       }, 1000);
     },
     addEntry() {
+      // FIXME
+      // eslint-disable-next-line vue/no-mutating-props
       this.items.push({
         id: this.nextId,
         name: "",
