@@ -39,7 +39,6 @@
                 "           if (child.id == id) {",
                 "             items.splice(index, 1);",
                 "*            found = true;",
-                "+            found = true;          }",
                 "*            this.updateItems(items);",
                 "*          }",
                 "           if (child.children) {",
@@ -51,18 +50,11 @@
             "type": "snippet",
             "path": "src/components/TreeView.vue",
             "comments": [],
-            "firstLineNumber": 79,
+            "firstLineNumber": 85,
             "lines": [
-                "         name,",
-                "       });",
-                "       this.saveNextIdToLocalStorage(id + 1);",
-                "*      this.updateItems();",
+                "       this.$emit(\"updateItems\", updatedItems);",
                 "     },",
-                "     updateItems(updatedItems = this.items) {",
-                "*      this.$emit(\"updateItems\", updatedItems);",
-                "+      // TODO",
-                "*    },",
-                "*    updateInput() {",
+                "     updateInput() {",
                 "*      // triggered on input, should only update the local storage only when user finished typing (debouncing)",
                 "*      if (this.timeout) clearTimeout(this.timeout);",
                 "*      this.timeout = setTimeout(() => {",
@@ -82,7 +74,7 @@
                 "         name: \"\",",
                 "       });",
                 "       this.saveNextIdToLocalStorage(this.nextId + 1);",
-                "*      this.updateItems();",
+                "*      this.updateItems(updatedItems);",
                 "     },",
                 "   },",
                 " };"
@@ -111,7 +103,7 @@
     "symbols": {},
     "file_version": "2.0.3",
     "meta": {
-        "app_version": "0.6.9-0",
+        "app_version": "0.7.5-0",
         "file_blobs": {
             "src/components/TreeView.vue": "6e57e15f210eeb9c1551f3ed5c51905f02b05c10",
             "src/views/Home.vue": "1bcb899084826a0a8e1e4fba4ed571517528eb73"
