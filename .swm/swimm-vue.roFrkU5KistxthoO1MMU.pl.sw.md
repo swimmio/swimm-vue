@@ -2,7 +2,7 @@
 id: roFrkU5KistxthoO1MMU
 name: Swimm vue
 file_version: 1.0.2
-app_version: 0.6.5-4
+app_version: 0.9.1-0
 ---
 
 <!-- Intro - Do not remove this comment -->
@@ -20,7 +20,7 @@ You should have npm installed in your enviorment.
 
 <!-- Steps - Do not remove this comment -->
 1. [Application overview](application-overview.GOGX3GIO5ZUCVkE6WAI2.sw.md)
-2. [project setup](/docs/project-setup.md)
+2. [Project Setup](project-setup.aihs6.sw.md)
 3. [Vue dev tools](vue-dev-tools.oQQ8gTY0Lorr391EGf2v.sw.md)
 4. [Project Overview](project-overview.m7DWPhc2BFaJmXhX0gko.sw.md)
 5. [The Vue Instance](https://vuejs.org/v2/guide/instance.html)
